@@ -1,24 +1,22 @@
 # Getting Started
 
+</br>
+
 To Start Monogame project, see [this post](https://docs.monogame.net/articles/tutorials/building_2d_games/02_getting_started/index.html?tabs=windows).
 
 ### Install VoldeNuit by using NuGet
 
 </br>
 
-[Install VoldeNuit by using CLI](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-nuget-cli);
-</br>
+[Install VoldeNuit by using CLI](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-nuget-cli);\
 or if you are using VSCode, enter "> Nuget: Add NuGet Package" to Command Palette.
 
+> VoldeNuit framework has dependencies on the [Magick.NET](https://github.com/dlemstra/Magick.NET).\
+ Follow the same steps for Magick.NET to resolve dependencies.
+
 </br>
 
-### Install VoldeNuit manually
-
-</br>
-
-Download VoldeNuit.dll at <https://github.com/Navylera/VoldeNuit> and put the dll at root directory of the project.
-
-Next, add next code to projectname.csproj
+Next, add next code to projectname.csproj.
 
 ```C#
 <ItemGroup>

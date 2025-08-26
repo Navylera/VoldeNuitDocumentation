@@ -1,0 +1,1958 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Instances/Instance.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+        <title>Instance - VoldeNuit Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VoldeNuit  Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">VoldeNuit  Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/Instances/Instance.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="instance">
+<h1>Instance<a class="headerlink" href="#instance" title="Link to this heading">¶</a></h1>
+<p>namespace: <a class="reference internal" href="Instances.html"><span class="std std-doc">VoldeNuit.Framework.Instances</span></a></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Instance</span>
+</pre></div>
+</div>
+<p>Instance is abstract class that
+an object in a game must inherit,
+and includes various properties and methods for game.</p>
+<blockquote>
+<div><p>Note: In the following document, instances that inherited this class
+are referred to as “<strong>Instance</strong>”, other instances
+are referred to as “<strong>instance</strong>”.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Note: For migration support from Gamemaker:Studio,
+Instance is automatically added to <a class="reference internal" href="../Heart.html#instance-id"><span class="std std-ref">instance_id</span></a> after created.<br />
+For this feature, every Instance must inherit constructor of the parent Instance.</p>
+</div></blockquote>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">¶</a></h2>
+</br>
+<section id="id">
+<h3>id<a class="headerlink" href="#id" title="Link to this heading">¶</a></h3>
+<p>id is read-only value that returns the reference of the Instance.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="x">
+<h3>x<a class="headerlink" href="#x" title="Link to this heading">¶</a></h3>
+<p>Contains x position of the Instance. The default value is 0.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="y">
+<h3>y<a class="headerlink" href="#y" title="Link to this heading">¶</a></h3>
+<p>Contains y position of the Instance. The default value is 0.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="xprevious">
+<h3>xprevious<a class="headerlink" href="#xprevious" title="Link to this heading">¶</a></h3>
+<p>Contains x value of the previous step.
+The x value just before the <a class="reference internal" href="#begin-step"><span class="xref myst">Begin_Step</span></a> executed is assign to xprevious.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xprevious</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="yprevious">
+<h3>yprevious<a class="headerlink" href="#yprevious" title="Link to this heading">¶</a></h3>
+<p>Contains y value of the previous step.
+The y value just before the <a class="reference internal" href="#begin-step"><span class="xref myst">Begin_Step</span></a> executed is assign to yprevious.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yprevious</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="hspeed">
+<h3>hspeed<a class="headerlink" href="#hspeed" title="Link to this heading">¶</a></h3>
+<p>Contains x-axis speed of the Instance. The default value is 0.<br />
+When hspeed is modified, the value of speed also changes.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hspeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="vspeed">
+<h3>vspeed<a class="headerlink" href="#vspeed" title="Link to this heading">¶</a></h3>
+<p>Contains y-axis speed of the Instance. The default value is 0.<br />
+When vspeed is modified, the value of speed also changes.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">vspeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="speed">
+<h3>speed<a class="headerlink" href="#speed" title="Link to this heading">¶</a></h3>
+<p>Contains speed of the Instance that movement in direction. The default value is 0.<br />
+When speed is modified, the values of hspeed and vspeed also changes.<br />
+If the value is negative, it moves in the opposite direction.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="direction">
+<h3>direction<a class="headerlink" href="#direction" title="Link to this heading">¶</a></h3>
+<p>Contains direction of the Instance that movement at speed.
+The default value is 0; The positive direction of the x-axis.
+When direction is modified, the values of hspeed and vspeed also changes.</p>
+<blockquote>
+<div><p>Note: VoldeNuit provides three ways to express angles; radians, degrees, and legacy. The default is radians.<br />
+For more information, see <a class="reference internal" href="../Configuration.html#angle-format"><span class="std std-ref">Configuration.ANGLE_FORMAT</span></a>.</p>
+</div></blockquote>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="friction">
+<h3>friction<a class="headerlink" href="#friction" title="Link to this heading">¶</a></h3>
+<p>Contains friction of the Instance. The default value is 0.<br />
+Before calculating the movement by the speed and the direction,
+the absolute value of the speed is subtracted by the friction.<br />
+The minimum value of the absolute value of the speed subtracted by friction is 0.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">friction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="solid">
+<h3>solid<a class="headerlink" href="#solid" title="Link to this heading">¶</a></h3>
+<p>Contains whether the Instance is solid or not. The default value is false.<br />
+If solid is true, it automatically calculates whether
+there is a collision when calculating the movement and stops
+when it collides with other solid Instances.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">solid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="collision">
+<h3>collision<a class="headerlink" href="#collision" title="Link to this heading">¶</a></h3>
+<p>Contains whether the Instance calculates whether to collide or not.
+The default value is true; If Instance is solid, always returns true.<br />
+If the collision is false, it is regarded as not having a collision box;
+is ignored in all collision decisions.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">collision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="depth">
+<h3>depth<a class="headerlink" href="#depth" title="Link to this heading">¶</a></h3>
+<p>Contains the depth of the Instance. The default value is 0.<br />
+Instance with large depth value is drawn on the window.
+If the depth values are the same, an early created Instance is drawn first.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="sprite-index">
+<h3>sprite_index<a class="headerlink" href="#sprite-index" title="Link to this heading">¶</a></h3>
+<p>Contains reference of the <a class="reference internal" href="../Drawing/Sprite.html"><span class="std std-doc">Sprite</span></a>.
+If sprite_index and <a class="reference internal" href="#mask-index"><span class="xref myst">mask_index</span></a> is null, it is regarded as not having a collision box;
+is ignored in all collision decisions.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<blockquote>
+<div><p>Note: When assign value to sprit_index,
+must assign instance reference returned by the <a class="reference internal" href="#instantiate-type-object-name"><span class="xref myst">instantiate(Type object_name)</span></a> method.</p>
+</div></blockquote>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Sprite</span><span class="o">?</span><span class="w"> </span><span class="n">sprite_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="sprite-width">
+<h3>sprite_width<a class="headerlink" href="#sprite-width" title="Link to this heading">¶</a></h3>
+<p>Contains width of the Instance’s <a class="reference internal" href="../Drawing/Sprite.html"><span class="std std-doc">Sprite</span></a>.
+If sprite_index is null, returns 0.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sprite_width</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="sprite-height">
+<h3>sprite_height<a class="headerlink" href="#sprite-height" title="Link to this heading">¶</a></h3>
+<p>Contains height of the Instance’s <a class="reference internal" href="../Drawing/Sprite.html"><span class="std std-doc">Sprite</span></a>.
+If sprite_index is null, returns 0.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sprite_height</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-speed">
+<h3>image_speed<a class="headerlink" href="#image-speed" title="Link to this heading">¶</a></h3>
+<p>Contains how image_index will increase with each step. The default value is 1.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-index">
+<h3>image_index<a class="headerlink" href="#image-index" title="Link to this heading">¶</a></h3>
+<p>Contains subimage index of Spritesheet. The default value is 0.\ 
+It automatically increases by image_speed before <a class="reference internal" href="#begin-step"><span class="xref myst">Begin_Step</span></a>.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-angle">
+<h3>image_angle<a class="headerlink" href="#image-angle" title="Link to this heading">¶</a></h3>
+<p>Contains angle of the Instance’s Sprite. The default value is 0; The positive direction of the x-axis.<br />
+This value does not affect collision check.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<blockquote>
+<div><p>Note: VoldeNuit provides three ways to express angles; radians, degrees, and legacy. The default is radians.<br />
+For more information, see <a class="reference internal" href="../Configuration.html#angle-format"><span class="std std-ref">Configuration.ANGLE_FORMAT</span></a>.</p>
+</div></blockquote>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-alpha">
+<h3>image_alpha<a class="headerlink" href="#image-alpha" title="Link to this heading">¶</a></h3>
+<p>Contains alpha of Instance. The default value is 1. Value ranges from 0 to 1.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-number">
+<h3>image_number<a class="headerlink" href="#image-number" title="Link to this heading">¶</a></h3>
+<p>image_alpha is read-only value that contains number of sub-images of Instance.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">image_alpha</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-xscale">
+<h3>image_xscale<a class="headerlink" href="#image-xscale" title="Link to this heading">¶</a></h3>
+<p>Contains scale that direction of the x-axis. The default value is 1.<br />
+If value is less than 0, image flips horizontally.<br />
+This value does not affect collision check.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="image-yscale">
+<h3>image_yscale<a class="headerlink" href="#image-yscale" title="Link to this heading">¶</a></h3>
+<p>Contains scale that direction of the y-axis. The default value is 1.<br />
+If value is less than 0, image flips vertically.<br />
+This value does not affect collision check.<br />
+<a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> refers to this value.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="mask-index">
+<h3>mask_index<a class="headerlink" href="#mask-index" title="Link to this heading">¶</a></h3>
+<p>Contains reference of Sprite that used for collision check. The default value is null.<br />
+If mask_index is null, returns sprite_index.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">mask_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
+</br>
+<section id="create">
+<h3>Create()<a class="headerlink" href="#create" title="Link to this heading">¶</a></h3>
+<p>Runs when Instance is created.<br />
+For more information, see <a class="reference internal" href="../Heart.html#heart-beat"><span class="std std-ref">Heart.Beat()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Create</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="begin-step">
+<h3>Begin_Step()<a class="headerlink" href="#begin-step" title="Link to this heading">¶</a></h3>
+<p>For more information, see <a class="reference internal" href="../Heart.html#beat"><span class="std std-ref">Heart.Beat()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Begin_Step</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="end-step">
+<h3>End_Step()<a class="headerlink" href="#end-step" title="Link to this heading">¶</a></h3>
+<p>For more information, see <a class="reference internal" href="../Heart.html#beat"><span class="std std-ref">Heart.Beat()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">End_Step</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="begin-draw">
+<h3>Begin_Draw()<a class="headerlink" href="#begin-draw" title="Link to this heading">¶</a></h3>
+<p>For more information, see <a class="reference internal" href="../Heart.html#draw"><span class="std std-ref">Heart.Draw()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Begin_Draw</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw">
+<h3>Draw()<a class="headerlink" href="#draw" title="Link to this heading">¶</a></h3>
+<p>If Instance does not inherit this method, runs <a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a> by default.<br />
+For more information, see <a class="reference internal" href="../Heart.html#draw"><span class="std std-ref">Heart.Draw()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Draw</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="end-draw">
+<h3>End_Draw()<a class="headerlink" href="#end-draw" title="Link to this heading">¶</a></h3>
+<p>For more information, see <a class="reference internal" href="../Heart.html#draw"><span class="std std-ref">Heart.Draw()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">End_Draw</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="gui-draw">
+<h3>GUI_Draw()<a class="headerlink" href="#gui-draw" title="Link to this heading">¶</a></h3>
+<p>In this method, position(0, 0) is always left-top of the game window.<br />
+For more information, see <a class="reference internal" href="../Heart.html#draw"><span class="std std-ref">Heart.Draw()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">GUI_Draw</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="destroy">
+<h3>Destroy()<a class="headerlink" href="#destroy" title="Link to this heading">¶</a></h3>
+<p>Runs when Instance is destroyed.<br />
+For more information, see <a class="reference internal" href="../Heart.html#beat"><span class="std std-ref">Heart.Beat()</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Destroy</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-self">
+<h3>draw_self()<a class="headerlink" href="#draw-self" title="Link to this heading">¶</a></h3>
+<p>Draws an object with reference to the following properties.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#sprite-index"><span class="xref myst">sprite_index</span></a></p></li>
+<li><p><a class="reference internal" href="#image-index"><span class="xref myst">image_index</span></a></p></li>
+<li><p><a class="reference internal" href="#x"><span class="xref myst">x</span></a></p></li>
+<li><p><a class="reference internal" href="#y"><span class="xref myst">y</span></a></p></li>
+<li><p><a class="reference internal" href="#image-xscale"><span class="xref myst">image_xscale</span></a></p></li>
+<li><p><a class="reference internal" href="#image-yscale"><span class="xref myst">image_yscale</span></a></p></li>
+<li><p><a class="reference internal" href="#image-angle"><span class="xref myst">image_angle</span></a></p></li>
+<li><p><a class="reference internal" href="#image-alpha"><span class="xref myst">image_alpha</span></a></p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_self</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-place-float-x-float-y-type-object-name">
+<h3>instance_place(float x, float y, Type object_name)<a class="headerlink" href="#instance-place-float-x-float-y-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns reference of the Instance
+if it collides with the provided Type
+when it is moved to the provided positions.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_place</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-place-float-x-float-y-instance-id">
+<h3>instance_place(float x, float y, Instance id)<a class="headerlink" href="#instance-place-float-x-float-y-instance-id" title="Link to this heading">¶</a></h3>
+<p>Returns reference of the Instance
+if it collides with the provided id
+when it is moved to the provided positions.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_place</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-place-list-float-x-float-y-type-object-name">
+<h3>instance_place_list(float x, float y, Type object_name)<a class="headerlink" href="#instance-place-list-float-x-float-y-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns List of Instances same Type with provided Type that collided with the Instance
+when the Instance is moved to the provided positions.</p>
+<ul class="simple">
+<li><p>Returns: List&lt;Instance&gt; (List of collided Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instance_place_list</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="activate">
+<h3>activate()<a class="headerlink" href="#activate" title="Link to this heading">¶</a></h3>
+<p>Activate Instance. Deactivated Instances are excluded from all processes.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">activate</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="deactivate">
+<h3>deactivate()<a class="headerlink" href="#deactivate" title="Link to this heading">¶</a></h3>
+<p>Deactivate Instance. Deactivated Instances are excluded from all processes.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">deactivate</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h2>
+</br>
+<section id="instantiate-type-object-name">
+<h3>Instantiate(Type object_name)<a class="headerlink" href="#instantiate-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns following type by converting it into reference of Instance.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Drawing/Sprite.html"><span class="std std-doc">Sprite</span></a></p></li>
+<li><p><a class="reference internal" href="../Drawing/Font.html"><span class="std std-doc">Font</span></a></p></li>
+<li><p>Instance</p></li>
+<li><p><a class="reference internal" href="../Audio/Sound.html"><span class="std std-doc">Sound</span></a></p></li>
+</ul>
+</br>
+<ul class="simple">
+<li><p>Returns: dynamic? (Reference of instance converted from argument or null
+if passed argument is not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type to convert to Instance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">dynamic?</span><span class="w"> </span><span class="n">instantiate</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-create-float-x-float-y-type-object-name-float-depth-0f">
+<h3>instance_create(float x, float y, Type object_name, float depth = 0f)<a class="headerlink" href="#instance-create-float-x-float-y-type-object-name-float-depth-0f" title="Link to this heading">¶</a></h3>
+<p>Returns reference of new Instance.</p>
+<ul class="simple">
+<li><p>Returns: Instance (reference of Instance created.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to create.</p></td>
+</tr>
+<tr class="row-odd"><td><p>depth</p></td>
+<td><p>float</p></td>
+<td><p>depth of Instance. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="nf">instance_create</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-exists-type-object-name">
+<h3>instance_exists(Type object_name)<a class="headerlink" href="#instance-exists-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns whether Instance of Type passed as argument exists in the game.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instance is exists.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">instance_exists</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-exists-instance-id">
+<h3>instance_exists(Instance id)<a class="headerlink" href="#instance-exists-instance-id" title="Link to this heading">¶</a></h3>
+<p>Returns whether Instance passed as argument exists in the game.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instance is exists.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Instance</p></td>
+<td><p>reference of Instance to check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">instance_exists</span><span class="p">(</span><span class="n">Instnace</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-destroy-type-object-name-bool-execute-event-flag-true">
+<h3>instance_destroy(Type object_name, bool execute_event_flag = true)<a class="headerlink" href="#instance-destroy-type-object-name-bool-execute-event-flag-true" title="Link to this heading">¶</a></h3>
+<p>Destroys all Instances that is same or inherited from Type passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instances are exists and are destroyed.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to destroy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>execute_event_flag</p></td>
+<td><p>bool</p></td>
+<td><p>Whether execute <a class="reference internal" href="#destroy"><span class="xref myst">Destroy()</span></a> method. The default value is true.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">instance_destroy</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">execute_event_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-destroy-instance-id-bool-execute-event-flag-true">
+<h3>instance_destroy(Instance id, bool execute_event_flag = true)<a class="headerlink" href="#instance-destroy-instance-id-bool-execute-event-flag-true" title="Link to this heading">¶</a></h3>
+<p>Destroys Instance that passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instances are exists and are destroyed.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to destroy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>execute_event_flag</p></td>
+<td><p>bool</p></td>
+<td><p>Whether execute <a class="reference internal" href="#destroy"><span class="xref myst">Destroy()</span></a> method. The default value is true.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">instance_destroy</span><span class="p">(</span><span class="n">Instance</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">execute_event_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-position-float-x-float-y-type-object-name">
+<h3>instance_position(float x, float y, Type object_name)<a class="headerlink" href="#instance-position-float-x-float-y-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns reference of the Instance
+if the Instance exists on provided positions.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_position</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-position-float-x-float-y-instance-id">
+<h3>instance_position(float x, float y, Instance id)<a class="headerlink" href="#instance-position-float-x-float-y-instance-id" title="Link to this heading">¶</a></h3>
+<p>Returns reference of the Instance
+if the Instance exists on provided positions.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of collided Instance, null if no collided Instance exists or not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_position</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-position-list-float-x-float-y-type-object-name">
+<h3>instance_position_list(float x, float y, Type object_name)<a class="headerlink" href="#instance-position-list-float-x-float-y-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns List of Instances same with Type passed as argument that on the position.</p>
+<ul class="simple">
+<li><p>Returns: List&lt;Instance&gt; (List of collided Instances.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instance_position</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-find-type-object-name-int-index-0">
+<h3>instance_find(Type object_name, int index = 0)<a class="headerlink" href="#instance-find-type-object-name-int-index-0" title="Link to this heading">¶</a></h3>
+<p>Returns reference of Instance that same with Type passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with Type passed as argument or null
+if passed argument is not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to find.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>int</p></td>
+<td><p>Index of the Instance to find. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_find</span><span class="o">?</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-find-instance-id">
+<h3>instance_find(Instance id)<a class="headerlink" href="#instance-find-instance-id" title="Link to this heading">¶</a></h3>
+<p>Returns reference of Instance that same with Type passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with passed as argument or null
+if passed argument is not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Type</p></td>
+<td><p>Reference of Instance to find.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">instance_find</span><span class="o">?</span><span class="p">(</span><span class="n">Instance</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="instance-find-list-type-object-name">
+<h3>instance_find_list(Type object_name)<a class="headerlink" href="#instance-find-list-type-object-name" title="Link to this heading">¶</a></h3>
+<p>Returns List of Instances same with Type passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with Type passed as argument or null
+if passed argument is not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object_name</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to find.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>int</p></td>
+<td><p>Index of the Instance to find. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instance_find</span><span class="o">?</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">object_name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="properties-alias">
+<h2>Properties Alias<a class="headerlink" href="#properties-alias" title="Link to this heading">¶</a></h2>
+</br>
+<section id="id1">
+<h3>ID<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#id"><span class="xref myst">id</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">ID</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id2">
+<h3>X<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#x"><span class="xref myst">x</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id3">
+<h3>Y<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#y"><span class="xref myst">y</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id4">
+<h3>XPrevious<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#xprevious"><span class="xref myst">xprevious</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">XPrevious</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id5">
+<h3>YPrevious<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#yprevious"><span class="xref myst">yprevious</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">YPrevious</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id6">
+<h3>HSpeed<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#hspeed"><span class="xref myst">hspeed</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">HSpeed</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id7">
+<h3>VSpeed<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#vspeed"><span class="xref myst">vspeed</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">VSpeed</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id8">
+<h3>Speed<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#speed"><span class="xref myst">speed</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Speed</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id9">
+<h3>Direction<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#direction"><span class="xref myst">direction</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Direction</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id10">
+<h3>Friction<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#friction"><span class="xref myst">friction</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Friction</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="issolid">
+<h3>isSolid<a class="headerlink" href="#issolid" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#solid"><span class="xref myst">solid</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isSolid</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="iscollidable">
+<h3>isCollidable<a class="headerlink" href="#iscollidable" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#collision"><span class="xref myst">collision</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">isCollidable</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id11">
+<h3>Depth<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#depth"><span class="xref myst">depth</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Depth</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="spriteindex">
+<h3>SpriteIndex<a class="headerlink" href="#spriteindex" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#sprite-index"><span class="xref myst">sprite_index</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Sprite</span><span class="o">?</span><span class="w"> </span><span class="n">SpriteIndex</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imagespeed">
+<h3>ImageSpeed<a class="headerlink" href="#imagespeed" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-speed"><span class="xref myst">image_speed</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageSpeed</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imageindex">
+<h3>ImageIndex<a class="headerlink" href="#imageindex" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-index"><span class="xref myst">image_index</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageIndex</span><span class="p">.</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imageangle">
+<h3>ImageAngle<a class="headerlink" href="#imageangle" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-angle"><span class="xref myst">image_angle</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageAngle</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imagealpha">
+<h3>ImageAlpha<a class="headerlink" href="#imagealpha" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-alpha"><span class="xref myst">image_alpha</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageAlpha</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imagenumber">
+<h3>ImageNumber<a class="headerlink" href="#imagenumber" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-number"><span class="xref myst">image_number</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ImageNumber</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imagexscale">
+<h3>ImageXScale<a class="headerlink" href="#imagexscale" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-xscale"><span class="xref myst">image_xscale</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageXScale</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="imageyscale">
+<h3>ImageYScale<a class="headerlink" href="#imageyscale" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#image-yscale"><span class="xref myst">image_yscale</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">ImageYScale</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="mask">
+<h3>Mask<a class="headerlink" href="#mask" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mask-index"><span class="xref myst">mask_index</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Mask</span><span class="p">;</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="methods-alias">
+<h2>Methods Alias<a class="headerlink" href="#methods-alias" title="Link to this heading">¶</a></h2>
+</br>
+<section id="drawself">
+<h3>DrawSelf()<a class="headerlink" href="#drawself" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-self"><span class="xref myst">draw_self()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSelf</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getinstancemeetswithat-float-x-float-y-type-objectname">
+<h3>GetInstanceMeetsWithAt(float X, float Y, Type objectName)<a class="headerlink" href="#getinstancemeetswithat-float-x-float-y-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-place-float-x-float-y-type-object-name"><span class="xref myst">instance_place(float x, float y, Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">GetInstanceMeetsWithAt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getinstancemeetswithat-float-x-float-y-instance-id">
+<h3>GetInstanceMeetsWithAt(float X, float Y, Instance ID)<a class="headerlink" href="#getinstancemeetswithat-float-x-float-y-instance-id" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-place-float-x-float-y-instance-id"><span class="xref myst">instance_place(float x, float y, Instance ID)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">GetInstanceMeetsWithAt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getlistmeetswithat-float-x-float-y-type-objectname">
+<h3>GetListMeetsWithAt(float X, float Y, Type objectName)<a class="headerlink" href="#getlistmeetswithat-float-x-float-y-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-place-list-float-x-float-y-type-object-name"><span class="xref myst">instance_place_list(float x, float y, Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: List&lt;Instance&gt; (List of collided Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to move.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position to move.</p></td>
+</tr>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetListMeetsWithAt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id12">
+<h3>Activate()<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#activate"><span class="xref myst">activate()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Activate</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id13">
+<h3>Deactivate()<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#deactivate"><span class="xref myst">deactivate()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Deactivate</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="static-methods-alias">
+<h2>Static Methods Alias<a class="headerlink" href="#static-methods-alias" title="Link to this heading">¶</a></h2>
+</br>
+<section id="createinstance-float-x-float-y-type-objectname-float-depth-0f">
+<h3>CreateInstance(float X, float Y, Type objectName, float depth = 0f)<a class="headerlink" href="#createinstance-float-x-float-y-type-objectname-float-depth-0f" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-create-float-x-float-y-type-object-name-int-depth-0f"><span class="xref myst">instance_create(float x, float y, Type object_name, float depth = 0f)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance (reference of Instance created.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position of Instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to create.</p></td>
+</tr>
+<tr class="row-odd"><td><p>depth</p></td>
+<td><p>float</p></td>
+<td><p>depth of Instance. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="nf">CreateInstance</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="isinstanceexists-type-objectname">
+<h3>IsInstanceExists(Type objectName)<a class="headerlink" href="#isinstanceexists-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-exists-type-object-name"><span class="xref myst">instance_exists(Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instance is exists.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsInstanceExists</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="isinstanceexists-instance-id">
+<h3>IsInstanceExists(Instance ID)<a class="headerlink" href="#isinstanceexists-instance-id" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-exists-instance-id"><span class="xref myst">instance_exists(Instance id)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instance is exists.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>Instance</p></td>
+<td><p>reference of Instance to check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsInstanceExists</span><span class="p">(</span><span class="n">Instance</span><span class="w"> </span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="destroy-type-objectname-bool-eventflag-true">
+<h3>Destroy(Type objectName, bool eventFlag = true)<a class="headerlink" href="#destroy-type-objectname-bool-eventflag-true" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-destroy-type-object-name-bool-execute-event-flag-true"><span class="xref myst">instance_destroy(Type object_name, bool execute_event_flag = true)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instances are exists and are destroyed.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to destroy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>eventFlag</p></td>
+<td><p>bool</p></td>
+<td><p>Whether execute <a class="reference internal" href="#destroy"><span class="xref myst">Destroy()</span></a> method. The default value is true.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Destroy</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eventFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="destroy-instance-id-bool-eventflag-true">
+<h3>Destroy(Instance ID, bool eventFlag = true)<a class="headerlink" href="#destroy-instance-id-bool-eventflag-true" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-destroy-instance-id-bool-execute-event-flag-true"><span class="xref myst">instance_destroy(Instance id, bool execute_event_flag = true)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether Instances are exists and are destroyed.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to destroy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>eventFlag</p></td>
+<td><p>bool</p></td>
+<td><p>Whether execute <a class="reference internal" href="#destroy"><span class="xref myst">Destroy()</span></a> method. The default value is true.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Destroy</span><span class="p">(</span><span class="n">Instance</span><span class="w"> </span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eventFlag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getinstanceonposition-float-x-float-y-type-objectname">
+<h3>GetInstanceOnPosition(float X, float Y, Type objectName)<a class="headerlink" href="#getinstanceonposition-float-x-float-y-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-position-float-x-float-y-type-object-name"><span class="xref myst">instance_position(float x, float y, Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of first collided Instance, null if no collided Instance exists or not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">GetInstanceOnPosition</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="id14">
+<h3>instance_position(float x, float y, Instance id)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-position-float-x-float-y-instance-id"><span class="xref myst">instance_position(float x, float y, Instance id)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of collided Instance, null if no collided Instance exists or not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>Instance</p></td>
+<td><p>Reference of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">GetInstanceOnPosition</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getlistonposition-float-x-float-y-type-objectname">
+<h3>GetListOnPosition(float X, float Y, Type objectName)<a class="headerlink" href="#getlistonposition-float-x-float-y-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-position-list-float-x-float-y-type-object-name"><span class="xref myst">instance_position_list(float x, float y, Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: List&lt;Instance&gt; (List of collided Instances.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>float</p></td>
+<td><p>x position to check collision.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>float</p></td>
+<td><p>y position to check collision.</p></td>
+</tr>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to check collision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetListOnPosition</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="findinstance-type-objectname-int-index-0">
+<h3>FindInstance(Type objectName, int index = 0)<a class="headerlink" href="#findinstance-type-objectname-int-index-0" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-find-type-object-name-int-index-0"><span class="xref myst">instance_find(Type object_name, int index = 0)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with Type passed as argument or null
+if passed argument is not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to find.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>int</p></td>
+<td><p>Index of the Instance to find. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">FindInstance</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="findinstance-type-id">
+<h3>FindInstance(Type ID)<a class="headerlink" href="#findinstance-type-id" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-find-instance-id"><span class="xref myst">instance_find(Instance id)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with passed as argument or null
+if passed argument is not valid Instance.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>Type</p></td>
+<td><p>Reference of Instance to find.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Instance</span><span class="o">?</span><span class="w"> </span><span class="n">FindInstance</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">ID</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getlistinstance-type-objectname">
+<h3>GetListInstance(Type objectName)<a class="headerlink" href="#getlistinstance-type-objectname" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#instance-find-list-type-object-name"><span class="xref myst">instance_find_list(Type object_name)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: Instance? (Reference of Instance that same with Type passed as argument or null
+if passed argument is not valid Type.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>objectName</p></td>
+<td><p>Type</p></td>
+<td><p>Type of Instance to find.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>int</p></td>
+<td><p>Index of the Instance to find. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instance</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetListInstance</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">objectName</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Navylera
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Instance</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a><ul>
+<li><a class="reference internal" href="#id">id</a></li>
+<li><a class="reference internal" href="#x">x</a></li>
+<li><a class="reference internal" href="#y">y</a></li>
+<li><a class="reference internal" href="#xprevious">xprevious</a></li>
+<li><a class="reference internal" href="#yprevious">yprevious</a></li>
+<li><a class="reference internal" href="#hspeed">hspeed</a></li>
+<li><a class="reference internal" href="#vspeed">vspeed</a></li>
+<li><a class="reference internal" href="#speed">speed</a></li>
+<li><a class="reference internal" href="#direction">direction</a></li>
+<li><a class="reference internal" href="#friction">friction</a></li>
+<li><a class="reference internal" href="#solid">solid</a></li>
+<li><a class="reference internal" href="#collision">collision</a></li>
+<li><a class="reference internal" href="#depth">depth</a></li>
+<li><a class="reference internal" href="#sprite-index">sprite_index</a></li>
+<li><a class="reference internal" href="#sprite-width">sprite_width</a></li>
+<li><a class="reference internal" href="#sprite-height">sprite_height</a></li>
+<li><a class="reference internal" href="#image-speed">image_speed</a></li>
+<li><a class="reference internal" href="#image-index">image_index</a></li>
+<li><a class="reference internal" href="#image-angle">image_angle</a></li>
+<li><a class="reference internal" href="#image-alpha">image_alpha</a></li>
+<li><a class="reference internal" href="#image-number">image_number</a></li>
+<li><a class="reference internal" href="#image-xscale">image_xscale</a></li>
+<li><a class="reference internal" href="#image-yscale">image_yscale</a></li>
+<li><a class="reference internal" href="#mask-index">mask_index</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#create">Create()</a></li>
+<li><a class="reference internal" href="#begin-step">Begin_Step()</a></li>
+<li><a class="reference internal" href="#end-step">End_Step()</a></li>
+<li><a class="reference internal" href="#begin-draw">Begin_Draw()</a></li>
+<li><a class="reference internal" href="#draw">Draw()</a></li>
+<li><a class="reference internal" href="#end-draw">End_Draw()</a></li>
+<li><a class="reference internal" href="#gui-draw">GUI_Draw()</a></li>
+<li><a class="reference internal" href="#destroy">Destroy()</a></li>
+<li><a class="reference internal" href="#draw-self">draw_self()</a></li>
+<li><a class="reference internal" href="#instance-place-float-x-float-y-type-object-name">instance_place(float x, float y, Type object_name)</a></li>
+<li><a class="reference internal" href="#instance-place-float-x-float-y-instance-id">instance_place(float x, float y, Instance id)</a></li>
+<li><a class="reference internal" href="#instance-place-list-float-x-float-y-type-object-name">instance_place_list(float x, float y, Type object_name)</a></li>
+<li><a class="reference internal" href="#activate">activate()</a></li>
+<li><a class="reference internal" href="#deactivate">deactivate()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-methods">Static Methods</a><ul>
+<li><a class="reference internal" href="#instantiate-type-object-name">Instantiate(Type object_name)</a></li>
+<li><a class="reference internal" href="#instance-create-float-x-float-y-type-object-name-float-depth-0f">instance_create(float x, float y, Type object_name, float depth = 0f)</a></li>
+<li><a class="reference internal" href="#instance-exists-type-object-name">instance_exists(Type object_name)</a></li>
+<li><a class="reference internal" href="#instance-exists-instance-id">instance_exists(Instance id)</a></li>
+<li><a class="reference internal" href="#instance-destroy-type-object-name-bool-execute-event-flag-true">instance_destroy(Type object_name, bool execute_event_flag = true)</a></li>
+<li><a class="reference internal" href="#instance-destroy-instance-id-bool-execute-event-flag-true">instance_destroy(Instance id, bool execute_event_flag = true)</a></li>
+<li><a class="reference internal" href="#instance-position-float-x-float-y-type-object-name">instance_position(float x, float y, Type object_name)</a></li>
+<li><a class="reference internal" href="#instance-position-float-x-float-y-instance-id">instance_position(float x, float y, Instance id)</a></li>
+<li><a class="reference internal" href="#instance-position-list-float-x-float-y-type-object-name">instance_position_list(float x, float y, Type object_name)</a></li>
+<li><a class="reference internal" href="#instance-find-type-object-name-int-index-0">instance_find(Type object_name, int index = 0)</a></li>
+<li><a class="reference internal" href="#instance-find-instance-id">instance_find(Instance id)</a></li>
+<li><a class="reference internal" href="#instance-find-list-type-object-name">instance_find_list(Type object_name)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#properties-alias">Properties Alias</a><ul>
+<li><a class="reference internal" href="#id1">ID</a></li>
+<li><a class="reference internal" href="#id2">X</a></li>
+<li><a class="reference internal" href="#id3">Y</a></li>
+<li><a class="reference internal" href="#id4">XPrevious</a></li>
+<li><a class="reference internal" href="#id5">YPrevious</a></li>
+<li><a class="reference internal" href="#id6">HSpeed</a></li>
+<li><a class="reference internal" href="#id7">VSpeed</a></li>
+<li><a class="reference internal" href="#id8">Speed</a></li>
+<li><a class="reference internal" href="#id9">Direction</a></li>
+<li><a class="reference internal" href="#id10">Friction</a></li>
+<li><a class="reference internal" href="#issolid">isSolid</a></li>
+<li><a class="reference internal" href="#iscollidable">isCollidable</a></li>
+<li><a class="reference internal" href="#id11">Depth</a></li>
+<li><a class="reference internal" href="#spriteindex">SpriteIndex</a></li>
+<li><a class="reference internal" href="#imagespeed">ImageSpeed</a></li>
+<li><a class="reference internal" href="#imageindex">ImageIndex</a></li>
+<li><a class="reference internal" href="#imageangle">ImageAngle</a></li>
+<li><a class="reference internal" href="#imagealpha">ImageAlpha</a></li>
+<li><a class="reference internal" href="#imagenumber">ImageNumber</a></li>
+<li><a class="reference internal" href="#imagexscale">ImageXScale</a></li>
+<li><a class="reference internal" href="#imageyscale">ImageYScale</a></li>
+<li><a class="reference internal" href="#mask">Mask</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#methods-alias">Methods Alias</a><ul>
+<li><a class="reference internal" href="#drawself">DrawSelf()</a></li>
+<li><a class="reference internal" href="#getinstancemeetswithat-float-x-float-y-type-objectname">GetInstanceMeetsWithAt(float X, float Y, Type objectName)</a></li>
+<li><a class="reference internal" href="#getinstancemeetswithat-float-x-float-y-instance-id">GetInstanceMeetsWithAt(float X, float Y, Instance ID)</a></li>
+<li><a class="reference internal" href="#getlistmeetswithat-float-x-float-y-type-objectname">GetListMeetsWithAt(float X, float Y, Type objectName)</a></li>
+<li><a class="reference internal" href="#id12">Activate()</a></li>
+<li><a class="reference internal" href="#id13">Deactivate()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-methods-alias">Static Methods Alias</a><ul>
+<li><a class="reference internal" href="#createinstance-float-x-float-y-type-objectname-float-depth-0f">CreateInstance(float X, float Y, Type objectName, float depth = 0f)</a></li>
+<li><a class="reference internal" href="#isinstanceexists-type-objectname">IsInstanceExists(Type objectName)</a></li>
+<li><a class="reference internal" href="#isinstanceexists-instance-id">IsInstanceExists(Instance ID)</a></li>
+<li><a class="reference internal" href="#destroy-type-objectname-bool-eventflag-true">Destroy(Type objectName, bool eventFlag = true)</a></li>
+<li><a class="reference internal" href="#destroy-instance-id-bool-eventflag-true">Destroy(Instance ID, bool eventFlag = true)</a></li>
+<li><a class="reference internal" href="#getinstanceonposition-float-x-float-y-type-objectname">GetInstanceOnPosition(float X, float Y, Type objectName)</a></li>
+<li><a class="reference internal" href="#id14">instance_position(float x, float y, Instance id)</a></li>
+<li><a class="reference internal" href="#getlistonposition-float-x-float-y-type-objectname">GetListOnPosition(float X, float Y, Type objectName)</a></li>
+<li><a class="reference internal" href="#findinstance-type-objectname-int-index-0">FindInstance(Type objectName, int index = 0)</a></li>
+<li><a class="reference internal" href="#findinstance-type-id">FindInstance(Type ID)</a></li>
+<li><a class="reference internal" href="#getlistinstance-type-objectname">GetListInstance(Type objectName)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

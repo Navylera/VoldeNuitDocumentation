@@ -1,0 +1,2020 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Draw.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+        <title>Draw - VoldeNuit Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VoldeNuit  Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">VoldeNuit  Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/Drawing/Draw.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="draw">
+<h1>Draw<a class="headerlink" href="#draw" title="Link to this heading">¶</a></h1>
+<p>namespace: <a class="reference internal" href="Drawing.html"><span class="std std-doc">VoldeNuit.Framework.Drawing</span></a></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Draw</span>
+</pre></div>
+</div>
+<p>Contains methods for drawing.</p>
+<blockquote>
+<div><p>Note: Draw methods are executed only at Draw sequence(Begin_Draw, Draw, End_Draw and GUI_Draw).
+For more information, see <a class="reference internal" href="../Heart.html#draw"><span class="std std-ref">Heart.Draw()</span></a>.</p>
+</div></blockquote>
+<section id="static-properties">
+<h2>Static Properties<a class="headerlink" href="#static-properties" title="Link to this heading">¶</a></h2>
+</br>
+<section id="halign">
+<h3>halign<a class="headerlink" href="#halign" title="Link to this heading">¶</a></h3>
+<p>Contains text horizontal alignment. The default value is fa_left.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">halign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fa_left</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_left</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_right</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="valign">
+<h3>valign<a class="headerlink" href="#valign" title="Link to this heading">¶</a></h3>
+<p>Contains text vertical alignment. The default value is fa_top.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">halign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fa_left</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_top</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_middle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa_bottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h2>
+</br>
+<section id="draw-set-color-uint-rgb">
+<h3>draw_set_color(uint rgb)<a class="headerlink" href="#draw-set-color-uint-rgb" title="Link to this heading">¶</a></h3>
+<p>Sets <a class="reference internal" href="Color.html#color"><span class="std std-ref">color</span></a>. Ignores alpha value.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>rgb</p></td>
+<td><p>uint</p></td>
+<td><p>Color to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_set_color</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="n">rgb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-set-alpha-float-a">
+<h3>draw_set_alpha(float a)<a class="headerlink" href="#draw-set-alpha-float-a" title="Link to this heading">¶</a></h3>
+<p>Sets alpha of <a class="reference internal" href="Color.html#color"><span class="std std-ref">color</span></a>. Value ranges from 0 to 1.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>float</p></td>
+<td><p>Alpha to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_set_alpha</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-line-float-x1-float-y1-float-x2-float-y2-int-width-1">
+<h3>draw_line(float x1, float y1, float x2, float y2, int width = 1)<a class="headerlink" href="#draw-line-float-x1-float-y1-float-x2-float-y2-int-width-1" title="Link to this heading">¶</a></h3>
+<p>Draws line from (x1, y1) to (x2, y2). width must be greater than 1.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x1</p></td>
+<td><p>float</p></td>
+<td><p>x position of start point.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y1</p></td>
+<td><p>float</p></td>
+<td><p>y position of start point.</p></td>
+</tr>
+<tr class="row-even"><td><p>x2</p></td>
+<td><p>float</p></td>
+<td><p>x position of end point.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y2</p></td>
+<td><p>float</p></td>
+<td><p>y position of end point.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of line.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_line</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false">
+<h3>draw_rectangle(float x, float y, int width, int height, bool outline = false)<a class="headerlink" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false" title="Link to this heading">¶</a></h3>
+<p>Draws rectangle.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>outline</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the rectangle is drawn filled (false) or as a one pixel wide outline (true).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_rectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-sprite-sprite-sprite-index-float-image-index-float-x-float-y">
+<h3>draw_sprite(Sprite sprite_index, float image_index, float x, float y)<a class="headerlink" href="#draw-sprite-sprite-sprite-index-float-image-index-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Draws <a class="reference internal" href="Sprite.html"><span class="std std-doc">Sprite</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sprite_index</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_index</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_sprite</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">
+<h3>draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)<a class="headerlink" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Draws <a class="reference internal" href="Sprite.html"><span class="std std-doc">Sprite</span></a> with additional options.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sprite_index</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_index</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_sprite_ext</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-sprite-part-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y">
+<h3>draw_sprite_part(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y)<a class="headerlink" href="#draw-sprite-part-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Draws part of <a class="reference internal" href="Sprite.html"><span class="std std-doc">Sprite</span></a>.</p>
+<blockquote>
+<div><p>Note: This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sprite_index</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_index</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_sprite_part</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">
+<h3>draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)<a class="headerlink" href="#draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Draws part of <a class="reference internal" href="Sprite.html"><span class="std std-doc">Sprite</span></a> with additional options.</p>
+<blockquote>
+<div><p>Note: This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sprite_index</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>image_index</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_sprite_part_ext</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">sprite_index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">image_index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-set-font-font-font">
+<h3>draw_set_font(Font font)<a class="headerlink" href="#draw-set-font-font-font" title="Link to this heading">¶</a></h3>
+<p>Sets default <a class="reference internal" href="Font.html"><span class="std std-doc">Font</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>font</p></td>
+<td><p>Font</p></td>
+<td><p>Reference of Font to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_set_font</span><span class="p">(</span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-set-halign-int-halign">
+<h3>draw_set_halign(int halign)<a class="headerlink" href="#draw-set-halign-int-halign" title="Link to this heading">¶</a></h3>
+<p>Sets <a class="reference internal" href="#halign"><span class="xref myst">horizontal text alignment</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>halign</p></td>
+<td><p><a class="reference internal" href="#halign"><span class="xref myst">halign</span></a></p></td>
+<td><p>Alignment constant to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_set_halign</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">halign</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-set-valign-int-valign">
+<h3>draw_set_valign(int valign)<a class="headerlink" href="#draw-set-valign-int-valign" title="Link to this heading">¶</a></h3>
+<p>Sets <a class="reference internal" href="#valign"><span class="xref myst">vertical text alignment</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>valign</p></td>
+<td><p><a class="reference internal" href="#valign"><span class="xref myst">valign</span></a></p></td>
+<td><p>Alignment constant to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_set_valign</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">valign</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>draw_text(float x, float y, string text, float xscale = 1f, float yscale = 1f, float angle = 0f)<a class="headerlink" href="#draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Draws text.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_text</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)<a class="headerlink" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Draws text with additional options.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sep</p></td>
+<td><p>float</p></td>
+<td><p>Distance between lines of text.</p></td>
+</tr>
+<tr class="row-even"><td><p>w</p></td>
+<td><p>float</p></td>
+<td><p>Maximum width of the text before a line break.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_text_ext</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sep</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="string-width-string-text">
+<h3>string_width(string text)<a class="headerlink" href="#string-width-string-text" title="Link to this heading">¶</a></h3>
+<p>Returns width of the text be drawn using the currently defined font.</p>
+<ul class="simple">
+<li><p>Returns: int (width of the text.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to measure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">string_width</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-texture-texture2d-texture-float-x-float-y">
+<h3>draw_texture(Texture2D texture, float x, float y)<a class="headerlink" href="#draw-texture-texture2d-texture-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Draws <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture</a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_texture</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-texture-ext-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">
+<h3>draw_texture_ext(Texture2D texture, float x, float y, float xscale, float yscale, int vx, int vy, float angle, uint color, float alpha)<a class="headerlink" href="#draw-texture-ext-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Draws <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture</a> with additional options.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vx</p></td>
+<td><p>int</p></td>
+<td><p>Xorigin of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>vy</p></td>
+<td><p>int</p></td>
+<td><p>Yorigin of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_texture_ext</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-texture-part-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">
+<h3>draw_texture_part(Texture2D texture, int left, int top, int width, int height, float x, float y)<a class="headerlink" href="#draw-texture-part-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Draws part of <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture</a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_texture_part</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-texture-part-ext-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">
+<h3>draw_texture_part_ext(Texture2D texture, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)<a class="headerlink" href="#draw-texture-part-ext-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Draws part of <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Texture2D.html">Texture</a> with additional options.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_texture_part_ext</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="static-properties-alias">
+<h2>Static Properties Alias<a class="headerlink" href="#static-properties-alias" title="Link to this heading">¶</a></h2>
+</br>
+<section id="horizontalalign">
+<h3>HorizontalAlign<a class="headerlink" href="#horizontalalign" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#halign"><span class="xref myst">halign</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HorizontalAlign</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HorizontalAlignLeft</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HorizontalAlignCenter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HorizontalAlignRight</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="verticalalign">
+<h3>VerticalAlign<a class="headerlink" href="#verticalalign" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#valign"><span class="xref myst">valign</span></a>.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VerticalAlign</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VerticalAlignTop</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VerticalAlignMiddle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">VerticalAlignBottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p></br></br></p>
+</section>
+</section>
+<section id="static-methods-alias">
+<h2>Static Methods Alias<a class="headerlink" href="#static-methods-alias" title="Link to this heading">¶</a></h2>
+</br>
+<section id="setdrawingcolor-uint-rgb">
+<h3>SetDrawingColor(uint rgb)<a class="headerlink" href="#setdrawingcolor-uint-rgb" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-set-color-uint-rgb"><span class="xref myst">draw_set_color(uint rgb)</span></a>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>rgb</p></td>
+<td><p>uint</p></td>
+<td><p>Color to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetDrawingColor</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="n">rgb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="setdrawingalpha-float-a">
+<h3>SetDrawingAlpha(float a)<a class="headerlink" href="#setdrawingalpha-float-a" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-set-alpha-float-a"><span class="xref myst">draw_set_alpha(float a)</span></a>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>float</p></td>
+<td><p>Alpha to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetDrawingAlpha</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawline-float-x1-float-y1-float-x2-float-y2-int-width-1">
+<h3>DrawLine(float x1, float y1, float x2, float y2, int width = 1)<a class="headerlink" href="#drawline-float-x1-float-y1-float-x2-float-y2-int-width-1" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-line-float-x1-float-y1-float-x2-float-y2-int-width-1"><span class="xref myst">draw_line(float x1, float y1, float x2, float y2, int width = 1)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x1</p></td>
+<td><p>float</p></td>
+<td><p>x position of start point.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y1</p></td>
+<td><p>float</p></td>
+<td><p>y position of start point.</p></td>
+</tr>
+<tr class="row-even"><td><p>x2</p></td>
+<td><p>float</p></td>
+<td><p>x position of end point.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y2</p></td>
+<td><p>float</p></td>
+<td><p>y position of end point.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of line.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawLine</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y1</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false">
+<h3>DrawRectangle(float x, float y, int width, int height, bool outLine = false)<a class="headerlink" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false"><span class="xref myst">draw_rectangle(float x, float y, int width, int height, bool outline = false)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of rectangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of rectangle.</p></td>
+</tr>
+<tr class="row-even"><td><p>outLine</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the rectangle is drawn filled (false) or as a one pixel wide outline (true).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawRectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y">
+<h3>DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y)<a class="headerlink" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-sprite-sprite-sprite-index-float-image-index-float-x-float-y"><span class="xref myst">draw_sprite(Sprite sprite_index, float image_index, float x, float y)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spriteIndex</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>imageIndex</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSprite</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">
+<h3>DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha)<a class="headerlink" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha"><span class="xref myst">draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spriteIndex</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>imageIndex</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSprite</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y">
+<h3>DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y)<a class="headerlink" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-sprite-part-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y"><span class="xref myst">draw_sprite_part(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y)</span></a>.</p>
+<blockquote>
+<div><p>Note: This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spriteIndex</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>imageIndex</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSpritePart</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">
+<h3>DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)<a class="headerlink" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha"><span class="xref myst">draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</span></a>.</p>
+<blockquote>
+<div><p>Note: This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spriteIndex</p></td>
+<td><p>Sprite</p></td>
+<td><p>Reference of Sprite to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>imageIndex</p></td>
+<td><p>float</p></td>
+<td><p>Index of subimage.</p></td>
+</tr>
+<tr class="row-even"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Sprite of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Sprite.</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Sprite.</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Sprite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSpritePart</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="setdrawingfont-font-font">
+<h3>SetDrawingFont(Font font)<a class="headerlink" href="#setdrawingfont-font-font" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-set-font-font-font"><span class="xref myst">draw_set_font(Font font)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>font</p></td>
+<td><p>Font</p></td>
+<td><p>Reference of Font to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetDrawingFont</span><span class="p">(</span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="sethorizontalalign-int-horizontalalign">
+<h3>SetHorizontalAlign(int horizontalAlign)<a class="headerlink" href="#sethorizontalalign-int-horizontalalign" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-set-halign-int-halign"><span class="xref myst">draw_set_halign(int halign)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>horizontalAlign</p></td>
+<td><p><a class="reference internal" href="#horizontalalign"><span class="xref myst">HorizontalAlign</span></a></p></td>
+<td><p>Alignment constant to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetHorizontalAlign</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">horizontalAlign</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="setverticalalign-int-verticalalign">
+<h3>SetVerticalAlign(int verticalAlign)<a class="headerlink" href="#setverticalalign-int-verticalalign" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-set-valign-int-valign"><span class="xref myst">draw_set_valign(int valign)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>verticalAlign</p></td>
+<td><p><a class="reference internal" href="#verticalalign"><span class="xref myst">VerticalAlign</span></a></p></td>
+<td><p>Alignment constant to set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetVerticalAlign</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">verticalAlign</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtext-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>DrawText(float x, float y, string text, float xScale = 1f, float yScale = 1f, float angle = 0f)<a class="headerlink" href="#drawtext-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f"><span class="xref myst">draw_text(float x, float y, string text, float xscale = 1f, float yscale = 1f, float angle = 0f)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawText</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)<a class="headerlink" href="#drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f"><span class="xref myst">draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lineBreakSpace</p></td>
+<td><p>float</p></td>
+<td><p>Distance between lines of text.</p></td>
+</tr>
+<tr class="row-even"><td><p>maxWidth</p></td>
+<td><p>float</p></td>
+<td><p>Maximum width of the text before a line break.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawText</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lineBreakSpace</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxWidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getstringwidth-string-text">
+<h3>GetStringWidth(string text)<a class="headerlink" href="#getstringwidth-string-text" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#string-width-string-text"><span class="xref myst">string_width(string text)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: int (width of the text.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to measure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetStringWidth</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtexture-texture2d-texture-float-x-float-y">
+<h3>DrawTexture(Texture2D texture, float x, float y)<a class="headerlink" href="#drawtexture-texture2d-texture-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-texture-texture2d-texture-float-x-float-y"><span class="xref myst">draw_texure(Texture2D texture, float x, float y</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTexture</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtexture-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">
+<h3>DrawTexture(Texture2D texture, float x, float y, float xScale, float yScale, int vx, int vy, float angle, uint color, float alpha)<a class="headerlink" href="#drawtexture-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-texture-ext-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha"><span class="xref myst">draw_texture_ext(Texture2D texture, float x, float y, float xScale, float yScale, int vx, int vy, float angle, uint color, float alpha)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vx</p></td>
+<td><p>int</p></td>
+<td><p>Xorigin of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>vy</p></td>
+<td><p>int</p></td>
+<td><p>Yorigin of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTexture</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">
+<h3>DrawTexturePart(Texture2D texture, int left, int top, int width, int height, float x, float y)<a class="headerlink" href="#drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-texture-part-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y"><span class="xref myst">draw_texture_part(Texture2D texture, int left, int top, int width, int height, float x, float y)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTexturePart</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">
+<h3>DrawTexturePart(Texture2D texture, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)<a class="headerlink" href="#drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-texture-part-ext-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha"><span class="xref myst">draw_texture_part_ext(Texture2D texture, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>texture</p></td>
+<td><p>Texture2D</p></td>
+<td><p>Reference of Texture to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>left</p></td>
+<td><p>int</p></td>
+<td><p>x position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>top</p></td>
+<td><p>int</p></td>
+<td><p>y position on the Texture of the left-top of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>Width of the area to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>Height of the area to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw area.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw area.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of Texture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>color</p></td>
+<td><p>float</p></td>
+<td><p>Color that blend to Texture.</p></td>
+</tr>
+<tr class="row-even"><td><p>alpha</p></td>
+<td><p>float</p></td>
+<td><p>Alpha of Texture.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTexturePart</span><span class="p">(</span><span class="n">Texture2D</span><span class="w"> </span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Navylera
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Draw</a><ul>
+<li><a class="reference internal" href="#static-properties">Static Properties</a><ul>
+<li><a class="reference internal" href="#halign">halign</a></li>
+<li><a class="reference internal" href="#valign">valign</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-methods">Static Methods</a><ul>
+<li><a class="reference internal" href="#draw-set-color-uint-rgb">draw_set_color(uint rgb)</a></li>
+<li><a class="reference internal" href="#draw-set-alpha-float-a">draw_set_alpha(float a)</a></li>
+<li><a class="reference internal" href="#draw-line-float-x1-float-y1-float-x2-float-y2-int-width-1">draw_line(float x1, float y1, float x2, float y2, int width = 1)</a></li>
+<li><a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false">draw_rectangle(float x, float y, int width, int height, bool outline = false)</a></li>
+<li><a class="reference internal" href="#draw-sprite-sprite-sprite-index-float-image-index-float-x-float-y">draw_sprite(Sprite sprite_index, float image_index, float x, float y)</a></li>
+<li><a class="reference internal" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#draw-sprite-part-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y">draw_sprite_part(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y)</a></li>
+<li><a class="reference internal" href="#draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#draw-set-font-font-font">draw_set_font(Font font)</a></li>
+<li><a class="reference internal" href="#draw-set-halign-int-halign">draw_set_halign(int halign)</a></li>
+<li><a class="reference internal" href="#draw-set-valign-int-valign">draw_set_valign(int valign)</a></li>
+<li><a class="reference internal" href="#draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text(float x, float y, string text, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#string-width-string-text">string_width(string text)</a></li>
+<li><a class="reference internal" href="#draw-texture-texture2d-texture-float-x-float-y">draw_texture(Texture2D texture, float x, float y)</a></li>
+<li><a class="reference internal" href="#draw-texture-ext-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">draw_texture_ext(Texture2D texture, float x, float y, float xscale, float yscale, int vx, int vy, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#draw-texture-part-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">draw_texture_part(Texture2D texture, int left, int top, int width, int height, float x, float y)</a></li>
+<li><a class="reference internal" href="#draw-texture-part-ext-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">draw_texture_part_ext(Texture2D texture, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-properties-alias">Static Properties Alias</a><ul>
+<li><a class="reference internal" href="#horizontalalign">HorizontalAlign</a></li>
+<li><a class="reference internal" href="#verticalalign">VerticalAlign</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-methods-alias">Static Methods Alias</a><ul>
+<li><a class="reference internal" href="#setdrawingcolor-uint-rgb">SetDrawingColor(uint rgb)</a></li>
+<li><a class="reference internal" href="#setdrawingalpha-float-a">SetDrawingAlpha(float a)</a></li>
+<li><a class="reference internal" href="#drawline-float-x1-float-y1-float-x2-float-y2-int-width-1">DrawLine(float x1, float y1, float x2, float y2, int width = 1)</a></li>
+<li><a class="reference internal" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false">DrawRectangle(float x, float y, int width, int height, bool outLine = false)</a></li>
+<li><a class="reference internal" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y">DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y)</a></li>
+<li><a class="reference internal" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y">DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y)</a></li>
+<li><a class="reference internal" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#setdrawingfont-font-font">SetDrawingFont(Font font)</a></li>
+<li><a class="reference internal" href="#sethorizontalalign-int-horizontalalign">SetHorizontalAlign(int horizontalAlign)</a></li>
+<li><a class="reference internal" href="#setverticalalign-int-verticalalign">SetVerticalAlign(int verticalAlign)</a></li>
+<li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#getstringwidth-string-text">GetStringWidth(string text)</a></li>
+<li><a class="reference internal" href="#drawtexture-texture2d-texture-float-x-float-y">DrawTexture(Texture2D texture, float x, float y)</a></li>
+<li><a class="reference internal" href="#drawtexture-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">DrawTexture(Texture2D texture, float x, float y, float xScale, float yScale, int vx, int vy, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">DrawTexturePart(Texture2D texture, int left, int top, int width, int height, float x, float y)</a></li>
+<li><a class="reference internal" href="#drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">DrawTexturePart(Texture2D texture, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

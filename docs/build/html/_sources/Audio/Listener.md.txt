@@ -8,7 +8,7 @@ public class Listener
 
 Contains about 3D audio.
  In 3D audio, Listener has the direction and positions of the instance
- to which the sound is heard.\
+ to which the sound is heard.
 
 >Note: By default, there is one Listener automatically created; Index is 0.
 

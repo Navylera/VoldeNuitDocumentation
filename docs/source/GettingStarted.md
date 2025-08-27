@@ -11,7 +11,7 @@ To Start Monogame project, see [this post](https://docs.monogame.net/articles/tu
 [Install VoldeNuit by using CLI](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-nuget-cli);\
 or if you are using VSCode, enter "> Nuget: Add NuGet Package" to Command Palette.
 
-> VoldeNuit framework has dependencies on the [Magick.NET-Q8-AnyCPU v14.8.0](https://github.com/dlemstra/Magick.NET).\
+> VoldeNuit framework has dependencies on the [Magick.NET-Q8-AnyCPU](https://github.com/dlemstra/Magick.NET).\
  Follow the same steps for Magick.NET to resolve dependencies.
 
 </br>

@@ -239,20 +239,19 @@
         <article role="main" id="furo-main-content">
           <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
+</br>
 <p>To Start Monogame project, see <a class="reference external" href="https://docs.monogame.net/articles/tutorials/building_2d_games/02_getting_started/index.html?tabs=windows">this post</a>.</p>
 <section id="install-voldenuit-by-using-nuget">
 <h2>Install VoldeNuit by using NuGet<a class="headerlink" href="#install-voldenuit-by-using-nuget" title="Link to this heading">¶</a></h2>
 </br>
-<p><a class="reference external" href="https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-nuget-cli">Install VoldeNuit by using CLI</a>;
-</br>
+<p><a class="reference external" href="https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-nuget-cli">Install VoldeNuit by using CLI</a>;<br />
 or if you are using VSCode, enter “&gt; Nuget: Add NuGet Package” to Command Palette.</p>
+<blockquote>
+<div><p>VoldeNuit framework has dependencies on the <a class="reference external" href="https://github.com/dlemstra/Magick.NET">Magick.NET</a>.<br />
+Follow the same steps for Magick.NET to resolve dependencies.</p>
+</div></blockquote>
 </br>
-</section>
-<section id="install-voldenuit-manually">
-<h2>Install VoldeNuit manually<a class="headerlink" href="#install-voldenuit-manually" title="Link to this heading">¶</a></h2>
-</br>
-<p>Download VoldeNuit.dll at <a class="reference external" href="https://github.com/Navylera/VoldeNuit">https://github.com/Navylera/VoldeNuit</a> and put the dll at root directory of the project.</p>
-<p>Next, add next code to projectname.csproj</p>
+<p>Next, add next code to projectname.csproj.</p>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ItemGroup</span><span class="o">&gt;</span>
 <span class="p">...</span>
 <span class="o">&lt;</span><span class="n">Reference</span><span class="w"> </span><span class="n">Include</span><span class="o">=</span><span class="s">&quot;VoldeNuit&quot;</span><span class="o">&gt;&lt;</span><span class="n">HintPath</span><span class="o">&gt;</span><span class="n">NightVision</span><span class="p">.</span><span class="n">dll</span><span class="o">&lt;/</span><span class="n">HintPath</span><span class="o">&gt;&lt;/</span><span class="n">Reference</span><span class="o">&gt;</span>
@@ -408,7 +407,6 @@ or if you are using VSCode, enter “&gt; Nuget: Add NuGet Package” to Command
             <ul>
 <li><a class="reference internal" href="#">Getting Started</a><ul>
 <li><a class="reference internal" href="#install-voldenuit-by-using-nuget">Install VoldeNuit by using NuGet</a></li>
-<li><a class="reference internal" href="#install-voldenuit-manually">Install VoldeNuit manually</a></li>
 <li><a class="reference internal" href="#initialize-voldenuit">Initialize VoldeNuit</a></li>
 </ul>
 </li>

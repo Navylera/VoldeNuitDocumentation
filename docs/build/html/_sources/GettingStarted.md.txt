@@ -51,9 +51,9 @@ protected override void Initialize() {
 
     // TODO: Add your initialization logic here
 
-    Heart.InitResolution(1280, 800);
+    Heart.InitResolution(1280, 800); // Input your resolution values
 
-    Heart.InitMonoGameEnvironment("projectName", this, _graphics);
+    Heart.InitMonoGameEnvironment(Assembly.GetExecutingAssembly(), this, _graphics);
 
     Configuration.ANGLE_FORMAT = Configuration.AngleFormat.RADIAN;
     Configuration.COLOR_FORMAT = Configuration.ColorFormat.ARGB;

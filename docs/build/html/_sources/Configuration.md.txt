@@ -66,30 +66,12 @@ public static MidpointRounding ROUNDING { get; set; } = MidpointRounding.AwayFro
 
 </br>
 
-#### CONTENT_PATH_LINUX
+#### CONTENT_PATH
 
-Contains contents directory that used when running on Linux. Default value is "./Content/".
+Contains contents directory. Default value is "./Content/".
 
 ```C#
-public static string CONTENT_PATH_LINUX { get; set; } = "./Content/";
+public static string CONTENT_PATH { get; set; } = "./Content/";
 ```
 
 </br>
-
-#### CONTENT_PATH_WINDOWS
-
-Contains contents directory that used when running on Windows. Default value is ".\\Content\\".
-
-```C#
-public static string CONTENT_PATH_WINDOWS { get; set; } = ".\\Content\\";
-```
-
-</br>
-
-#### CONTENT_PATH_OTHERS
-
-Contains contents directory that used when running on other os. Default value is "./Content/".
-
-```C#
-public static string CONTENT_PATH_OTHERS { get; set; } = "./Content/";
-```

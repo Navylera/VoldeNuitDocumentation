@@ -12,9 +12,7 @@ TODO:
  and texture file is loaded at the same time.
  If no value is assigned to [texture_path](texture-path), tracks file with the same name as the class name.\
 supported filename extensions are [.xnb](https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/) and .png.\
-The default path is "[Configuration.CONTENT_PATH_LINUX](/Configuration.md#content-path-linux)+Sprite" on Linux, 
- "[Configuration.CONTENT_PATH_WINDOWS](/Configuration.md#content-path-windows)+Sprite" on Windows, 
- "[Configuration.CONTENT_PATH_UNIVERSAL](/Configuration.md#content-path-universal)+Sprite" on the others. 
+The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path)+Sprite".
 
 ### Properties
 

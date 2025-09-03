@@ -12,9 +12,7 @@ Contains sound for [SoundInstance](./SoundInstance.md).
  and audio file is loaded at the same time.
  If no value is assigned to [sound_path](sound-path), tracks file with the same name as the class name.\
 supported filename extensions are [.xnb](https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/) and .wav.\
-The default path is "[Configuration.CONTENT_PATH_LINUX](/Configuration.md#content-path-linux)+Sound" on Linux,
- "[Configuration.CONTENT_PATH_WINDOWS](/Configuration.md#content-path-windows)+Sound" on Windows,
- "[Configuration.CONTENT_PATH_UNIVERSAL](/Configuration.md#content-path-universal)+Sound" on the others. 
+The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path)+Sound".
 
 ### Properties
 

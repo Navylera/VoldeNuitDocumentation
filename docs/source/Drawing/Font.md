@@ -17,9 +17,7 @@ Contains texture and data for drawing text.
 Contains name of font file. It can be only assigned once.
 
 >Note: supported file extensions is .ttf.\
-The default path is "[Configuration.CONTENT_PATH_LINUX](/Configuration.md#content-path-linux)+Font" on Linux, 
- "[Configuration.CONTENT_PATH_WINDOWS](/Configuration.md#content-path-windows)+Font" on Windows, 
- "[Configuration.CONTENT_PATH_UNIVERSAL](/Configuration.md#content-path-universal)+Font" on the others.
+The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path)+Font".
 
 ```C#
 public string name { get; init; }

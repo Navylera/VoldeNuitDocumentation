@@ -282,9 +282,9 @@ Follow the same steps for Magick.NET to resolve dependencies.</p>
 
 <span class="w">    </span><span class="c1">// TODO: Add your initialization logic here</span>
 
-<span class="w">    </span><span class="n">Heart</span><span class="p">.</span><span class="n">InitResolution</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Heart</span><span class="p">.</span><span class="n">InitResolution</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">);</span><span class="w"> </span><span class="c1">// Input your resolution values</span>
 
-<span class="w">    </span><span class="n">Heart</span><span class="p">.</span><span class="n">InitMonoGameEnvironment</span><span class="p">(</span><span class="s">&quot;projectName&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">_graphics</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Heart</span><span class="p">.</span><span class="n">InitMonoGameEnvironment</span><span class="p">(</span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">(),</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">_graphics</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">Configuration</span><span class="p">.</span><span class="n">ANGLE_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuration</span><span class="p">.</span><span class="n">AngleFormat</span><span class="p">.</span><span class="n">RADIAN</span><span class="p">;</span>
 <span class="w">    </span><span class="n">Configuration</span><span class="p">.</span><span class="n">COLOR_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuration</span><span class="p">.</span><span class="n">ColorFormat</span><span class="p">.</span><span class="n">ARGB</span><span class="p">;</span>

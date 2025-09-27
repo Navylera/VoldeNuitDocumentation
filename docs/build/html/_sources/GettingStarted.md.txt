@@ -132,4 +132,4 @@ public class RoomTitle: Room {
 
 # After Initialization
 
-You can find more informations and examples at VoldeNuit.Examples(WIP).
+You can find more informations and sample project at [sample project repository](https://github.com/Navylera/VoldeNuitSampleProject).

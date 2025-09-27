@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
-        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Display/Viewport.html" />
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Surface.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>Viewport - VoldeNuit Documentation</title>
+        <title>Surface - VoldeNuit Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -217,7 +217,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/Display/Viewport.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/Drawing/Surface.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -237,83 +237,204 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="viewport">
-<h1>Viewport<a class="headerlink" href="#viewport" title="Link to this heading">¶</a></h1>
-<p>namespace: <a class="reference internal" href="Display.html"><span class="std std-doc">VoldeNuit.Framework.Display</span></a></p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Viewport</span>
+          <section id="surface">
+<h1>Surface<a class="headerlink" href="#surface" title="Link to this heading">¶</a></h1>
+<p>namespace: <a class="reference internal" href="Drawing.html"><span class="std std-doc">VoldeNuit.Framework.Drawing</span></a></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Surface</span>
 </pre></div>
 </div>
-<p>Contains range of the window to display <a class="reference internal" href="View.html"><span class="std std-doc">View</span></a>. The Viewport is drawn in index order.</p>
-<section id="properties">
-<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">¶</a></h2>
+<p>Surface class Contains methods to support <a class="reference external" href="https://manual.gamemaker.io/lts/en/GameMaker_Language/GML_Reference/Drawing/Surfaces/Surfaces.htm">Surface</a>.</p>
+<blockquote>
+<div><p>Note: Without this class, you can directly set <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.RenderTarget2D.html">RenderTarget2D</a> and draw Texture.</p>
+</div></blockquote>
+<section id="static-methods-alias">
+<h2>Static Methods Alias<a class="headerlink" href="#static-methods-alias" title="Link to this heading">¶</a></h2>
 </br>
-<section id="x">
-<h3>x<a class="headerlink" href="#x" title="Link to this heading">¶</a></h3>
-<p>Contains x position of the Viewport.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<section id="rendertarget2d-surface-create-int-width-int-height">
+<h3>RenderTarget2D surface_create(int width, int height)<a class="headerlink" href="#rendertarget2d-surface-create-int-width-int-height" title="Link to this heading">¶</a></h3>
+<p>Creates new RenderTarget and returns it.</p>
+<ul class="simple">
+<li><p>Returns: RenderTarget2D</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>int</p></td>
+<td><p>width of the RenderTarget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>int</p></td>
+<td><p>height of the RenderTarget.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="nf">surface_create</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
 </section>
-<section id="y">
-<h3>y<a class="headerlink" href="#y" title="Link to this heading">¶</a></h3>
-<p>Contains y position of the Viewport.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</section>
+<section id="rendertarget2d-surface-exists-rendertarget2d-surface">
+<h2>RenderTarget2D surface_exists(RenderTarget2D surface)<a class="headerlink" href="#rendertarget2d-surface-exists-rendertarget2d-surface" title="Link to this heading">¶</a></h2>
+<p>Returns whether RenderTarget that passed as argument is exists.</p>
+<ul class="simple">
+<li><p>Returns: bool (Whether RenderTarget is exists.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>surface</p></td>
+<td><p>RenderTarget2D</p></td>
+<td><p>Reference of RenderTarget.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="nf">surface_exists</span><span class="p">(</span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="n">surface</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
 </section>
-<section id="width">
-<h3>width<a class="headerlink" href="#width" title="Link to this heading">¶</a></h3>
-<p>Contains width of the Viewport.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<section id="surface-set-target-rendertarget2d-surface">
+<h2>surface_set_target(RenderTarget2D surface)<a class="headerlink" href="#surface-set-target-rendertarget2d-surface" title="Link to this heading">¶</a></h2>
+<p>Sets new RenderTarget.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>surface</p></td>
+<td><p>RenderTarget2D</p></td>
+<td><p>Reference of RenderTarget.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">surface_set_target</span><span class="p">(</span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="n">surface</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
 </section>
-<section id="height">
-<h3>height<a class="headerlink" href="#height" title="Link to this heading">¶</a></h3>
-<p>Contains height of the Viewport.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<section id="surface-reset-target">
+<h2>surface_reset_target()<a class="headerlink" href="#surface-reset-target" title="Link to this heading">¶</a></h2>
+<p>Resets RenderTarget.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">surface_reset_target</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-serface-rendertarget2d-surface-float-x-float-y">
+<h2>draw_serface(RenderTarget2D surface, float x, float y)<a class="headerlink" href="#draw-serface-rendertarget2d-surface-float-x-float-y" title="Link to this heading">¶</a></h2>
+<p>Draws RenderTarget that passed as argument to Screen.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>surface</p></td>
+<td><p>RenderTarget2D</p></td>
+<td><p>Reference of RenderTarget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_serface</span><span class="p">(</span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="n">surface</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="surface-free-rendertarget2d-surface">
+<h2>surface_free(RenderTarget2D surface)<a class="headerlink" href="#surface-free-rendertarget2d-surface" title="Link to this heading">¶</a></h2>
+<p>Dispose RenderTarget that passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>surface</p></td>
+<td><p>RenderTarget2D</p></td>
+<td><p>Reference of RenderTarget.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">surface_free</span><span class="p">(</span><span class="n">RenderTarget2D</span><span class="w"> </span><span class="n">surface</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="surface-clear-uint-color">
+<h2>surface_clear(uint color)<a class="headerlink" href="#surface-clear-uint-color" title="Link to this heading">¶</a></h2>
+<p>Clear current RenderTarget by color that passed as argument.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>uint</p></td>
+<td><p>Color to clear RenderTarget.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">surface_clear</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p></br></br></p>
-</section>
-</section>
-<section id="properties-alias">
-<h2>Properties Alias<a class="headerlink" href="#properties-alias" title="Link to this heading">¶</a></h2>
-</br>
-<section id="id1">
-<h3>X<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#x"><span class="xref myst">x</span></a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">X</span><span class="p">;</span>
-</pre></div>
-</div>
-</br>
-</section>
-<section id="id2">
-<h3>y<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#y"><span class="xref myst">y</span></a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Y</span><span class="p">;</span>
-</pre></div>
-</div>
-</br>
-</section>
-<section id="id3">
-<h3>Width<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#width"><span class="xref myst">width</span></a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Width</span><span class="p">;</span>
-</pre></div>
-</div>
-</br>
-</section>
-<section id="id4">
-<h3>Height<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#height"><span class="xref myst">height</span></a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Height</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 
@@ -354,21 +475,17 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Viewport</a><ul>
-<li><a class="reference internal" href="#properties">Properties</a><ul>
-<li><a class="reference internal" href="#x">x</a></li>
-<li><a class="reference internal" href="#y">y</a></li>
-<li><a class="reference internal" href="#width">width</a></li>
-<li><a class="reference internal" href="#height">height</a></li>
+<li><a class="reference internal" href="#">Surface</a><ul>
+<li><a class="reference internal" href="#static-methods-alias">Static Methods Alias</a><ul>
+<li><a class="reference internal" href="#rendertarget2d-surface-create-int-width-int-height">RenderTarget2D surface_create(int width, int height)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#properties-alias">Properties Alias</a><ul>
-<li><a class="reference internal" href="#id1">X</a></li>
-<li><a class="reference internal" href="#id2">y</a></li>
-<li><a class="reference internal" href="#id3">Width</a></li>
-<li><a class="reference internal" href="#id4">Height</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#rendertarget2d-surface-exists-rendertarget2d-surface">RenderTarget2D surface_exists(RenderTarget2D surface)</a></li>
+<li><a class="reference internal" href="#surface-set-target-rendertarget2d-surface">surface_set_target(RenderTarget2D surface)</a></li>
+<li><a class="reference internal" href="#surface-reset-target">surface_reset_target()</a></li>
+<li><a class="reference internal" href="#draw-serface-rendertarget2d-surface-float-x-float-y">draw_serface(RenderTarget2D surface, float x, float y)</a></li>
+<li><a class="reference internal" href="#surface-free-rendertarget2d-surface">surface_free(RenderTarget2D surface)</a></li>
+<li><a class="reference internal" href="#surface-clear-uint-color">surface_clear(uint color)</a></li>
 </ul>
 </li>
 </ul>

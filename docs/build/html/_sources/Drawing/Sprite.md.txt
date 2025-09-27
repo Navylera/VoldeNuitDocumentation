@@ -6,8 +6,6 @@ namespace: [VoldeNuit.Framework.Drawing](/Drawing/Drawing.md)
 public class Sprite
 ```
 
-TODO: 
-
 >Note: Sprite class is created when that Sprite is referenced for the first time,
  and texture file is loaded at the same time.
  If no value is assigned to [texture_path](texture-path), tracks file with the same name as the class name.\

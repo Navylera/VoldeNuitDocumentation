@@ -9,6 +9,7 @@ Contains about screen and room.
 ### Classes
 
 - [Camera](./Camera.md)
+- [Window](./DisplayClass.md)
 - [Room](./Room.md)
 - [View](./View.md)
 - [ViewLegacy](./ViewLegacy.md)

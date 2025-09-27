@@ -560,6 +560,66 @@
 </div>
 </br>
 </section>
+<section id="keyboard-key-press-byte-key">
+<h3>keyboard_key_press(byte key)<a class="headerlink" href="#keyboard-key-press-byte-key" title="Link to this heading">¶</a></h3>
+<p>Changes key state that passed as arugument to pressed.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html">Keyboard.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>byte</p></td>
+<td><p>byte data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">keyboard_key_press</span><span class="p">(</span><span class="kt">byte</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="keyboard-key-release-byte-key">
+<h3>keyboard_key_release(byte key)<a class="headerlink" href="#keyboard-key-release-byte-key" title="Link to this heading">¶</a></h3>
+<p>Changes key state that passed as arugument to released.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html">Keyboard.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>byte</p></td>
+<td><p>byte data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">keyboard_key_release</span><span class="p">(</span><span class="kt">byte</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
 <section id="keyboard-clear-byte-key">
 <h3>keyboard_clear(byte key)<a class="headerlink" href="#keyboard-clear-byte-key" title="Link to this heading">¶</a></h3>
 <p>Clears current keyboard state.</p>
@@ -590,6 +650,9 @@
 <section id="io-clear">
 <h3>io_clear()<a class="headerlink" href="#io-clear" title="Link to this heading">¶</a></h3>
 <p>Clears current input state.</p>
+<blockquote>
+<div><p>Obsolete: This method will be removed in the next major update. Please use the <a class="reference internal" href="UniversalInput.html#io-clear"><span class="std std-ref">UniversalInput.io_clear()</span></a> instead.”</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -722,6 +785,66 @@
 </div>
 </br>
 </section>
+<section id="presskey-byte-key">
+<h3>PressKey(byte key)<a class="headerlink" href="#presskey-byte-key" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#keyboard-key-press-byte-key"><span class="xref myst">keyboard_key_press(byte key)</span></a>.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html">Keyboard.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>byte</p></td>
+<td><p>byte data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">PressKey</span><span class="p">(</span><span class="kt">byte</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="releasekey-byte-key">
+<h3>ReleaseKey(byte key)<a class="headerlink" href="#releasekey-byte-key" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#keyboard-key-release-byte-key"><span class="xref myst">keyboard_key_release(byte key)</span></a>.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html">Keyboard.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>byte</p></td>
+<td><p>byte data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ReleaseKey</span><span class="p">(</span><span class="kt">byte</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
 <section id="clearkey-byte-input">
 <h3>ClearKey(byte input)<a class="headerlink" href="#clearkey-byte-input" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#keyboard-clear-byte-key"><span class="xref myst">keyboard_clear(byte key)</span></a>.</p>
@@ -751,6 +874,9 @@
 </section>
 <section id="cleario">
 <h3>ClearIO()<a class="headerlink" href="#cleario" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>Obsolete: This method will be removed in the next major update. Please use the <a class="reference internal" href="UniversalInput.html#cleario"><span class="std std-ref">UniversalInput.ClearIO()</span></a> instead.”</p>
+</div></blockquote>
 <p>Alias of <a class="reference internal" href="#io-clear"><span class="xref myst">io_clear()</span></a>.</p>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
@@ -810,6 +936,8 @@
 <li><a class="reference internal" href="#keyboard-check-byte-key">keyboard_check(byte key)</a></li>
 <li><a class="reference internal" href="#keyboard-check-pressed-byte-key">keyboard_check_pressed(byte key)</a></li>
 <li><a class="reference internal" href="#keyboard-check-released-byte-key">keyboard_check_released(byte key)</a></li>
+<li><a class="reference internal" href="#keyboard-key-press-byte-key">keyboard_key_press(byte key)</a></li>
+<li><a class="reference internal" href="#keyboard-key-release-byte-key">keyboard_key_release(byte key)</a></li>
 <li><a class="reference internal" href="#keyboard-clear-byte-key">keyboard_clear(byte key)</a></li>
 <li><a class="reference internal" href="#io-clear">io_clear()</a></li>
 </ul>
@@ -823,6 +951,8 @@
 <li><a class="reference internal" href="#haskeyinput-byte-key">HasKeyInput(byte key)</a></li>
 <li><a class="reference internal" href="#haskeypressed-byte-input">HasKeyPressed(byte input)</a></li>
 <li><a class="reference internal" href="#haskeyreleased-byte-key">HasKeyReleased(byte key)</a></li>
+<li><a class="reference internal" href="#presskey-byte-key">PressKey(byte key)</a></li>
+<li><a class="reference internal" href="#releasekey-byte-key">ReleaseKey(byte key)</a></li>
 <li><a class="reference internal" href="#clearkey-byte-input">ClearKey(byte input)</a></li>
 <li><a class="reference internal" href="#cleario">ClearIO()</a></li>
 </ul>

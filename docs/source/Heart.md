@@ -15,6 +15,14 @@ execute sequences.
 
 </br>
 
+#### graphicsDevice
+
+graphicsDevice is read-only value that contains reference of the current GraphicsDevice.
+
+```C#
+public static GraphicsDevice graphicsDevice { get; }
+```
+
 #### instance_id
 
 Returns copy of list of current [Instances](/Instances/Instance.md) as read-only.

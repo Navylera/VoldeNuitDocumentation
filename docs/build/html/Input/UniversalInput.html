@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="./">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
-        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Configuration.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Input/UniversalInput.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>Configuration - VoldeNuit Documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+        <title>UniversalInput - VoldeNuit Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
 
@@ -167,7 +167,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">VoldeNuit  Documentation</div></a>
+      <a href="../index.html"><div class="brand">VoldeNuit  Documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -188,11 +188,11 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   <span class="sidebar-brand-text">VoldeNuit  Documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -217,7 +217,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/Configuration.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/Input/UniversalInput.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -237,79 +237,42 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h1>
-<p>namespace: <a class="reference internal" href="#/Framework.md"><span class="xref myst">VoldeNuit.Framework</span></a></p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Configuration</span>
+          <section id="universalinput">
+<h1>UniversalInput<a class="headerlink" href="#universalinput" title="Link to this heading">¶</a></h1>
+<p>namespace: <a class="reference internal" href="Input.html"><span class="std std-doc">VoldeNuit.Framework.Input</span></a></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UniversalInput</span>
 </pre></div>
 </div>
-<p>Configuration is static class that
-contains configuration about the overall game system.</p>
-<section id="static-properties">
-<h2>Static Properties<a class="headerlink" href="#static-properties" title="Link to this heading">¶</a></h2>
+<p>Contains methods for universal input.</p>
+<section id="static-methods">
+<h2>Static Methods<a class="headerlink" href="#static-methods" title="Link to this heading">¶</a></h2>
 </br>
-<section id="angle-format">
-<h3>ANGLE_FORMAT<a class="headerlink" href="#angle-format" title="Link to this heading">¶</a></h3>
-<p>ANGLE_FORMAT contains that how to handle angle values.</p>
+<section id="io-clear">
+<h3>io_clear()<a class="headerlink" href="#io-clear" title="Link to this heading">¶</a></h3>
+<p>Clears current input state.</p>
 <ul class="simple">
-<li><p>RADIAN handles angle value from -float.Pi to float.Pi;
-calculated as 0 being right, float.Pi/2 being down, (-)float.Pi being left and -float.Pi/2 being down.</p></li>
-<li><p>DEGREE handles angle value from 0 to 360;
-calculated as 0 being right, 90 being down, 180 being left and 270 being up.</p></li>
-<li><p>LEGACY handles angle value from 0 to 360;
-calculated as 0 being right, 270 being down, 180 being left and 90 being up.</p></li>
+<li><p>Returns: N/A</p></li>
 </ul>
-<p>The default value is ColorFormat.RADIAN.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">AngleFormat</span><span class="w"> </span><span class="n">ANGLE_FORMAT</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AngleFormat</span><span class="p">.</span><span class="n">RADIAN</span><span class="p">;</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">AngleFormat</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">RADIAN</span><span class="p">,</span>
-<span class="w">    </span><span class="n">DEGREE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">LEGACY</span>
-<span class="p">}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">io_clear</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
-</br>
+<p></br></br></p>
 </section>
-<section id="color-format">
-<h3>COLOR_FORMAT<a class="headerlink" href="#color-format" title="Link to this heading">¶</a></h3>
-<p>COLOR_FORMAT contains that which order to interpret hexadecimal values to Color.
-The default value is ColorFormat.ARGB.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">ColorFormat</span><span class="w"> </span><span class="n">COLOR_FORMAT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ColorFormat</span><span class="p">.</span><span class="n">ARGB</span><span class="p">;</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">ColorFormat</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">ARGB</span><span class="p">,</span>
-<span class="w">    </span><span class="n">BGRA</span><span class="p">,</span>
-<span class="w">    </span><span class="n">ABGR</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</br>
 </section>
-<section id="roudning">
-<h3>ROUDNING<a class="headerlink" href="#roudning" title="Link to this heading">¶</a></h3>
-<p>ROUDNING contains how to rounds number.
-The default value is <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.midpointrounding?view=net-8.0">MidpointRounding.AwayFromZero</a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">MidpointRounding</span><span class="w"> </span><span class="n">ROUNDING</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MidpointRounding</span><span class="p">.</span><span class="n">AwayFromZero</span><span class="p">;</span>
-</pre></div>
-</div>
+<section id="static-methods-alias">
+<h2>Static Methods Alias<a class="headerlink" href="#static-methods-alias" title="Link to this heading">¶</a></h2>
 </br>
-</section>
-<section id="content-path">
-<h3>CONTENT_PATH<a class="headerlink" href="#content-path" title="Link to this heading">¶</a></h3>
-<p>Contains contents directory. Default value is “./Content/”.</p>
-<blockquote>
-<div><p>Obsolete: This property will be removed in the next major update.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Note: To load the xnb files, do not modify this property.</p>
-</div></blockquote>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CONTENT_PATH</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./Content/&quot;</span><span class="p">;</span>
+<section id="cleario">
+<h3>ClearIO()<a class="headerlink" href="#cleario" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#io-clear"><span class="xref myst">io_clear()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ClearIO</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
-</br></section>
+<p></br></br></p>
+</section>
 </section>
 </section>
 
@@ -350,12 +313,13 @@ The default value is <a class="reference external" href="https://learn.microsoft
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Configuration</a><ul>
-<li><a class="reference internal" href="#static-properties">Static Properties</a><ul>
-<li><a class="reference internal" href="#angle-format">ANGLE_FORMAT</a></li>
-<li><a class="reference internal" href="#color-format">COLOR_FORMAT</a></li>
-<li><a class="reference internal" href="#roudning">ROUDNING</a></li>
-<li><a class="reference internal" href="#content-path">CONTENT_PATH</a></li>
+<li><a class="reference internal" href="#">UniversalInput</a><ul>
+<li><a class="reference internal" href="#static-methods">Static Methods</a><ul>
+<li><a class="reference internal" href="#io-clear">io_clear()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-methods-alias">Static Methods Alias</a><ul>
+<li><a class="reference internal" href="#cleario">ClearIO()</a></li>
 </ul>
 </li>
 </ul>
@@ -369,9 +333,9 @@ The default value is <a class="reference external" href="https://learn.microsoft
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-# Keyboard
+# Mouse
 
 namespace: [VoldeNuit.Framework.Input](/Input/Input.md)
 
@@ -133,6 +133,62 @@ Returns true when the button is released and was pressed in the previous Step.
 public static bool mouse_check_button_released(int mb) {}
 ```
 
+</br>
+
+#### mouse_button_press(int mb)
+Changes button state that passed as arugument to pressed.
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Mouse.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|mb|int|int data to change state.|
+
+```C#
+public static void mouse_button_press(int mb) {}
+```
+
+</br>
+
+#### mouse_button_release(int mb)
+Changes button state that passed as arugument to released.
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Mouse.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|mb|int|int data to change state.|
+
+```C#
+public static void mouse_button_release(int mb) {}
+```
+
+</br>
+
+#### mouse_wheel_up()
+Returns whether mouse wheel is scrolled up.
+
+- Returns: bool (whether mouse wheel is scrolled up.)
+
+```C#
+public static void mouse_wheel_up() {}
+```
+
+</br>
+
+#### mouse_wheel_down()
+Returns whether mouse wheel is scrolled down.
+
+- Returns: bool (whether mouse wheel is scrolled down.)
+
+```C#
+public static void mouse_wheel_down() {}
+```
+
 </br></br>
 
 ### Static Properties Alias
@@ -261,8 +317,8 @@ public static bool HasButtonPressed(int mouseButton) {}
 
 </br>
 
-#### HasButtonReleased(int mb)
-Alias of [mouse_check_button_released(int mb)](mouse-check-button-released-int-mb).
+#### HasButtonReleased(int mouseButton)
+Alias of [mouse_check_button_released(int mouseButton)](mouse-check-button-released-int-mb).
 
 - Returns: bool
 
@@ -271,5 +327,62 @@ Alias of [mouse_check_button_released(int mb)](mouse-check-button-released-int-m
 |mouseButton|int|int data to check input.|
 
 ```C#
-public static bool HasButtonReleased(int mb) {}
+public static bool HasButtonReleased(int mouseButton) {}
 ```
+
+</br>
+
+#### PressButton(int mouseButton)
+Alias of [mouse_button_press(int mb)](mouse-button-press-int-mb).
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Mouse.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|mouseButton|int|int data to change state.|
+
+```C#
+public static void PressButton(int mb) {}
+```
+
+</br>
+
+#### ReleaseButton(int mouseButton)
+Alias of [mouse_button_release(int mb)](mouse-button-release-int-mb).
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Mouse.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|mouseButton|int|int data to change state.|
+
+```C#
+public static void ReleaseButton(int mb) {}
+```
+
+</br>
+
+#### HasWheelUp()
+Alias of [mouse_wheel_up()](mouse-wheel-up).
+
+- Returns: bool (whether mouse wheel is scrolled up.)
+
+```C#
+public static void mouse_wheel_up() {}
+```
+
+</br>
+
+#### HasWheelDown()
+Alias of [mouse_wheel_down()](mouse-wheel-down).
+
+- Returns: bool (whether mouse wheel is scrolled down.)
+
+```C#
+public static void HasWheelDown() {}
+```
+</br></br>

@@ -7,7 +7,7 @@
         <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Input/Mouse.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
-        <title>Keyboard - VoldeNuit Documentation</title>
+        <title>Mouse - VoldeNuit Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -237,8 +237,8 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="keyboard">
-<h1>Keyboard<a class="headerlink" href="#keyboard" title="Link to this heading">¶</a></h1>
+          <section id="mouse">
+<h1>Mouse<a class="headerlink" href="#mouse" title="Link to this heading">¶</a></h1>
 <p>namespace: <a class="reference internal" href="Input.html"><span class="std std-doc">VoldeNuit.Framework.Input</span></a></p>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Mouse</span>
 </pre></div>
@@ -445,6 +445,88 @@
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">mouse_check_button_released</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
+</br>
+</section>
+<section id="mouse-button-press-int-mb">
+<h3>mouse_button_press(int mb)<a class="headerlink" href="#mouse-button-press-int-mb" title="Link to this heading">¶</a></h3>
+<p>Changes button state that passed as arugument to pressed.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html">Mouse.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mb</p></td>
+<td><p>int</p></td>
+<td><p>int data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mouse_button_press</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="mouse-button-release-int-mb">
+<h3>mouse_button_release(int mb)<a class="headerlink" href="#mouse-button-release-int-mb" title="Link to this heading">¶</a></h3>
+<p>Changes button state that passed as arugument to released.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html">Mouse.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mb</p></td>
+<td><p>int</p></td>
+<td><p>int data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mouse_button_release</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="mouse-wheel-up">
+<h3>mouse_wheel_up()<a class="headerlink" href="#mouse-wheel-up" title="Link to this heading">¶</a></h3>
+<p>Returns whether mouse wheel is scrolled up.</p>
+<ul class="simple">
+<li><p>Returns: bool (whether mouse wheel is scrolled up.)</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mouse_wheel_up</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="mouse-wheel-down">
+<h3>mouse_wheel_down()<a class="headerlink" href="#mouse-wheel-down" title="Link to this heading">¶</a></h3>
+<p>Returns whether mouse wheel is scrolled down.</p>
+<ul class="simple">
+<li><p>Returns: bool (whether mouse wheel is scrolled down.)</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mouse_wheel_down</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
 <p></br></br></p>
 </section>
 </section>
@@ -636,9 +718,9 @@
 </div>
 </br>
 </section>
-<section id="hasbuttonreleased-int-mb">
-<h3>HasButtonReleased(int mb)<a class="headerlink" href="#hasbuttonreleased-int-mb" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#mouse-check-button-released-int-mb"><span class="xref myst">mouse_check_button_released(int mb)</span></a>.</p>
+<section id="hasbuttonreleased-int-mousebutton">
+<h3>HasButtonReleased(int mouseButton)<a class="headerlink" href="#hasbuttonreleased-int-mousebutton" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mouse-check-button-released-int-mb"><span class="xref myst">mouse_check_button_released(int mouseButton)</span></a>.</p>
 <ul class="simple">
 <li><p>Returns: bool</p></li>
 </ul>
@@ -658,9 +740,92 @@
 </tbody>
 </table>
 </div>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasButtonReleased</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasButtonReleased</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mouseButton</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
+</br>
+</section>
+<section id="pressbutton-int-mousebutton">
+<h3>PressButton(int mouseButton)<a class="headerlink" href="#pressbutton-int-mousebutton" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mouse-button-press-int-mb"><span class="xref myst">mouse_button_press(int mb)</span></a>.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html">Mouse.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mouseButton</p></td>
+<td><p>int</p></td>
+<td><p>int data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">PressButton</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="releasebutton-int-mousebutton">
+<h3>ReleaseButton(int mouseButton)<a class="headerlink" href="#releasebutton-int-mousebutton" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mouse-button-release-int-mb"><span class="xref myst">mouse_button_release(int mb)</span></a>.</p>
+<blockquote>
+<div><p>Note: The state changed by this method remains for current frame only, and the state returned by <a class="reference external" href="https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Mouse.html">Mouse.GetState()</a> is not change.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mouseButton</p></td>
+<td><p>int</p></td>
+<td><p>int data to change state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ReleaseButton</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mb</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="haswheelup">
+<h3>HasWheelUp()<a class="headerlink" href="#haswheelup" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mouse-wheel-up"><span class="xref myst">mouse_wheel_up()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (whether mouse wheel is scrolled up.)</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mouse_wheel_up</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="haswheeldown">
+<h3>HasWheelDown()<a class="headerlink" href="#haswheeldown" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#mouse-wheel-down"><span class="xref myst">mouse_wheel_down()</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: bool (whether mouse wheel is scrolled down.)</p></li>
+</ul>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">HasWheelDown</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p></br></br></p>
 </section>
 </section>
 </section>
@@ -702,7 +867,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Keyboard</a><ul>
+<li><a class="reference internal" href="#">Mouse</a><ul>
 <li><a class="reference internal" href="#static-properties">Static Properties</a><ul>
 <li><a class="reference internal" href="#mouse-constants">Mouse Constants</a></li>
 <li><a class="reference internal" href="#mouse-x">mouse_x</a></li>
@@ -716,6 +881,10 @@
 <li><a class="reference internal" href="#mouse-check-button-int-mb">mouse_check_button(int mb)</a></li>
 <li><a class="reference internal" href="#mouse-check-button-pressed-int-mb">mouse_check_button_pressed(int mb)</a></li>
 <li><a class="reference internal" href="#mouse-check-button-released-int-mb">mouse_check_button_released(int mb)</a></li>
+<li><a class="reference internal" href="#mouse-button-press-int-mb">mouse_button_press(int mb)</a></li>
+<li><a class="reference internal" href="#mouse-button-release-int-mb">mouse_button_release(int mb)</a></li>
+<li><a class="reference internal" href="#mouse-wheel-up">mouse_wheel_up()</a></li>
+<li><a class="reference internal" href="#mouse-wheel-down">mouse_wheel_down()</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#static-properties-alias">Static Properties Alias</a><ul>
@@ -734,7 +903,11 @@
 <li><a class="reference internal" href="#yoncamera-camera-camera">YOnCamera(Camera camera)</a></li>
 <li><a class="reference internal" href="#hasbuttoninput-int-mousebutton">HasButtonInput(int mouseButton)</a></li>
 <li><a class="reference internal" href="#hasbuttonpressed-int-mousebutton">HasButtonPressed(int mouseButton)</a></li>
-<li><a class="reference internal" href="#hasbuttonreleased-int-mb">HasButtonReleased(int mb)</a></li>
+<li><a class="reference internal" href="#hasbuttonreleased-int-mousebutton">HasButtonReleased(int mouseButton)</a></li>
+<li><a class="reference internal" href="#pressbutton-int-mousebutton">PressButton(int mouseButton)</a></li>
+<li><a class="reference internal" href="#releasebutton-int-mousebutton">ReleaseButton(int mouseButton)</a></li>
+<li><a class="reference internal" href="#haswheelup">HasWheelUp()</a></li>
+<li><a class="reference internal" href="#haswheeldown">HasWheelDown()</a></li>
 </ul>
 </li>
 </ul>

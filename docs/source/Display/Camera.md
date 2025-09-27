@@ -3,7 +3,7 @@
 namespace: [VoldeNuit.Framework.Display](/Display/Display.md)
 
 ```C#
-public abstract class Camera
+public class Camera
 ```
 
 Contains [View](./View.md) and [Viewport](./Viewport.md). The Viewport is drawn in index order.

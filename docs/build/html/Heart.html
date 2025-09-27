@@ -249,6 +249,13 @@ execute sequences.</p>
 <section id="static-properties">
 <h2>Static Properties<a class="headerlink" href="#static-properties" title="Link to this heading">¶</a></h2>
 </br>
+<section id="graphicsdevice">
+<h3>graphicsDevice<a class="headerlink" href="#graphicsdevice" title="Link to this heading">¶</a></h3>
+<p>graphicsDevice is read-only value that contains reference of the current GraphicsDevice.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">GraphicsDevice</span><span class="w"> </span><span class="n">graphicsDevice</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
 <section id="instance-id">
 <h3>instance_id<a class="headerlink" href="#instance-id" title="Link to this heading">¶</a></h3>
 <p>Returns copy of list of current <a class="reference internal" href="Instances/Instance.html"><span class="std std-doc">Instances</span></a> as read-only.</p>
@@ -511,6 +518,7 @@ e.g. A.Begin_Draw() -&gt; B.Begin_Draw() -&gt; A.Draw() -&gt; B.Draw()…</p>
             <ul>
 <li><a class="reference internal" href="#">Heart</a><ul>
 <li><a class="reference internal" href="#static-properties">Static Properties</a><ul>
+<li><a class="reference internal" href="#graphicsdevice">graphicsDevice</a></li>
 <li><a class="reference internal" href="#instance-id">instance_id</a></li>
 <li><a class="reference internal" href="#instance-id-deactivated">instance_id_deactivated</a></li>
 <li><a class="reference internal" href="#room-current">room_current</a></li>

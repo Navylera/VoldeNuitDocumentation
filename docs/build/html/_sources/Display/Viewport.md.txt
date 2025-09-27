@@ -3,7 +3,7 @@
 namespace: [VoldeNuit.Framework.Display](/Display/Display.md)
 
 ```C#
-public abstract class Viewport
+public class Viewport
 ```
 
 Contains range of the window to display [View](./View.md). The Viewport is drawn in index order.

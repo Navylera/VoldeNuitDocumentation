@@ -70,6 +70,10 @@ public static MidpointRounding ROUNDING { get; set; } = MidpointRounding.AwayFro
 
 Contains contents directory. Default value is "./Content/".
 
+> Obsolete: This property will be removed in the next major update.
+
+>Note: To load the xnb files, do not modify this property.
+
 ```C#
 public static string CONTENT_PATH { get; set; } = "./Content/";
 ```

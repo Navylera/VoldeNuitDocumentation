@@ -153,6 +153,40 @@ public static bool keyboard_check_released(byte key) {}
 
 </br>
 
+#### keyboard_key_press(byte key)
+Changes key state that passed as arugument to pressed.
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Keyboard.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|key|byte|byte data to change state.|
+
+```C#
+public static void keyboard_key_press(byte key) {}
+```
+
+</br>
+
+#### keyboard_key_release(byte key)
+Changes key state that passed as arugument to released.
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Keyboard.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|key|byte|byte data to change state.|
+
+```C#
+public static void keyboard_key_release(byte key) {}
+```
+
+</br>
+
 #### keyboard_clear(byte key)
 Clears current keyboard state.
 
@@ -170,6 +204,8 @@ public static void keyboard_clear(byte input) {}
 
 #### io_clear()
 Clears current input state.
+
+> Obsolete: This method will be removed in the next major update. Please use the [UniversalInput.io_clear()](/Input/UniversalInput.md#io-clear) instead."
 
 - Returns: N/A
 
@@ -256,6 +292,40 @@ public static bool HasKeyReleased(byte key) {}
 
 </br>
 
+#### PressKey(byte key)
+Alias of [keyboard_key_press(byte key)](keyboard-key-press-byte-key).
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Keyboard.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|key|byte|byte data to change state.|
+
+```C#
+public static void PressKey(byte key) {}
+```
+
+</br>
+
+#### ReleaseKey(byte key)
+Alias of [keyboard_key_release(byte key)](keyboard-key-release-byte-key).
+
+>Note: The state changed by this method remains for current frame only, and the state returned by [Keyboard.GetState()](https://docs.monogame.net/api/Microsoft.Xna.Framework.Input.Keyboard.html) is not change.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|key|byte|byte data to change state.|
+
+```C#
+public static void ReleaseKey(byte key) {}
+```
+
+</br>
+
 #### ClearKey(byte input)
 Alias of [keyboard_clear(byte key)](keyboard-clear-byte-key).
 
@@ -272,6 +342,9 @@ public static void ClearKey(byte input) {}
 </br>
 
 #### ClearIO()
+
+> Obsolete: This method will be removed in the next major update. Please use the [UniversalInput.ClearIO()](/Input/UniversalInput.md#cleario) instead."
+
 Alias of [io_clear()](io-clear).
 
 - Returns: N/A

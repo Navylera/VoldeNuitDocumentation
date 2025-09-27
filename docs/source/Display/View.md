@@ -3,7 +3,7 @@
 namespace: [VoldeNuit.Framework.Display](/Display/Display.md)
 
 ```C#
-public abstract class View
+public class View
 ```
 
 Contains range of the [Room](./Room.md) to display on the window.

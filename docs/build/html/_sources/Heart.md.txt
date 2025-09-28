@@ -23,6 +23,8 @@ graphicsDevice is read-only value that contains reference of the current Graphic
 public static GraphicsDevice graphicsDevice { get; }
 ```
 
+</br>
+
 #### instance_id
 
 Returns copy of list of current [Instances](/Instances/Instance.md) as read-only.
@@ -30,6 +32,8 @@ Returns copy of list of current [Instances](/Instances/Instance.md) as read-only
 ```C#
 public static IList<Instance> instance_id;
 ```
+
+</br>
 
 #### instance_id_deactivated
 

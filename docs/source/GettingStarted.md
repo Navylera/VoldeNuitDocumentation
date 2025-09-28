@@ -16,6 +16,10 @@ or if you are using VSCode, enter "> Nuget: Add NuGet Package" to Command Palett
 
 </br>
 
+### Install VoldeNuit manually
+
+Download VoldeNuit.dll at [VoldeNuit/releases](https://github.com/Navylera/VoldeNuit/releases).
+
 Next, add next code to projectname.csproj.
 
 ```C#

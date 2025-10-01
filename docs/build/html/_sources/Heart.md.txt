@@ -30,7 +30,7 @@ public static GraphicsDevice graphicsDevice { get; }
 Returns copy of list of current [Instances](/Instances/Instance.md) as read-only.
 
 ```C#
-public static IList<Instance> instance_id;
+public static ReadOnlySpan<Instance> instance_id;
 ```
 
 </br>
@@ -40,7 +40,7 @@ public static IList<Instance> instance_id;
 Returns copy of list of current deactivated [Instances](/Instances/Instance.md) as read-only.
 
 ```C#
-public static IList<Instance> instance_id_deactivated;
+public static ReadOnlySpan<Instance> instance_id_deactivated;
 ```
 
 </br>

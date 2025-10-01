@@ -11,7 +11,7 @@ Contains sound for [SoundInstance](./SoundInstance.md).
 >Note: Sound class is created when that Sound is referenced for the first time,
  and audio file is loaded at the same time.
  If no value is assigned to [sound_path](sound-path), tracks file with the same name as the class name.\
-supported filename extensions are [.xnb](https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/) and .wav.\
+supported filename extensions are [.xnb](https://docs.monogame.net/articles/getting_to_know/whatis/content_pipeline/) .wav, and .ogg.\
 The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path)+Sound".
 
 ### Properties

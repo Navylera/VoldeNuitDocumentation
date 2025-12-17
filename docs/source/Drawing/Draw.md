@@ -213,6 +213,10 @@ public static void draw_sprite_part_ext(Sprite sprite_index, float image_index, 
 #### draw_set_font(Font font)
 Sets default [Font](./Font.md).
 
+>Note: Since resources are loaded asynchronously, this method must not be used before initialization is fully complete.
+
+This method ignores offset of Sprite ([Sprite.x](./Sprite.md#x) and [Sprite.y](./Sprite.md#y)).
+
 - Returns: N/A
 
 |Parameter|Type|Desc|
@@ -278,6 +282,8 @@ public static void draw_text(float x, float y, string text, float xscale = 1f, f
 #### draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)
 Draws text with additional options.
 
+>Note: The parameters sep and w are predicated on the assumption that xscale and yscale are both 1, respectively. if different values are passed to xscale and yscale, sep and w must be adjusted proportionally.
+
 - Returns: N/A
 
 |Parameter|Type|Desc|
@@ -308,6 +314,21 @@ Returns width of the text be drawn using the currently defined font.
 
 ```C#
 public static int string_width(string text) {}
+```
+
+</br>
+
+#### char_width(char c)
+Returns width of the character be drawn using the currently defined font.
+
+- Returns: int (width of the character.)
+
+|Parameter|Type|Desc|
+|---|---|---|
+|c|char|character to measure.|
+
+```C#
+public static int string_width(char c) {}
 ```
 
 </br>
@@ -600,6 +621,8 @@ public static void DrawSpritePart(Sprite spriteIndex, float imageIndex, int left
 #### SetDrawingFont(Font font)
 Alias of [draw_set_font(Font font)](draw-set-font-font-font).
 
+>Note: Since resources are loaded asynchronously, this method must not be used before initialization is fully complete.
+
 - Returns: N/A
 
 |Parameter|Type|Desc|
@@ -665,6 +688,8 @@ public void DrawText(float x, float y, string text, float xScale = 1f, float ySc
 #### DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)
 Alias of [draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)](draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f).
 
+>Note: The parameters lineBreakSpace and maxWidth are predicated on the assumption that xScale and yScale are both 1, respectively. if different values are passed to xScale and yScale, maxWidth and lineBreakSpace must be adjusted proportionally.
+
 - Returns: N/A
 
 |Parameter|Type|Desc|
@@ -696,6 +721,21 @@ Alias of [string_width(string text)](string-width-string-text).
 
 ```C#
 public static int GetStringWidth(string text) {}
+```
+
+</br>
+
+#### GetCharWidth(char c)
+Alias of [char_width(char c)](char-width-char-c).
+
+- Returns: int (width of the character.)
+
+|Parameter|Type|Desc|
+|---|---|---|
+|c|char|character to measure.|
+
+```C#
+public static int GetCharWidth(char c) {}
 ```
 
 </br>

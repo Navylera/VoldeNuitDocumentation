@@ -1,15 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
-        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Sprite.html" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html">
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Sprite.html">
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"><!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>Sprite - VoldeNuit Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -23,14 +23,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -145,14 +145,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -162,8 +158,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -171,8 +166,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -180,8 +174,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -223,8 +216,7 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -232,8 +224,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -253,14 +244,13 @@ The default path is “<a class="reference internal" href="../Configuration.html
 <section id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">¶</a></h2>
 </br>
-<section id="texture">
-<h3>texture<a class="headerlink" href="#texture" title="Link to this heading">¶</a></h3>
-<p>Contains Texture to draw.</p>
+<section id="embedded">
+<h3>embedded<a class="headerlink" href="#embedded" title="Link to this heading">¶</a></h3>
+<p>Contains whether resource is embedded or not. The default value is false.</p>
 <blockquote>
-<div><p>Note: It is not recommended that modifying the Texture of pre-defined Sprite.
-If necessary, get copy of the Sprite by using <a class="reference internal" href="#sprite-copy-sprite-sprite"><span class="xref myst">sprite_copy(Sprite sprite)</span></a>.</p>
+<div><p>Note: Embedded resources support only .png files.</p>
 </div></blockquote>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Texture2D</span><span class="o">?</span><span class="w"> </span><span class="n">texture_path</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">embedded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
 </pre></div>
 </div>
 </br>
@@ -269,6 +259,19 @@ If necessary, get copy of the Sprite by using <a class="reference internal" href
 <h3>texture_path<a class="headerlink" href="#texture-path" title="Link to this heading">¶</a></h3>
 <p>Contains path of texture file. The default value is null. It can be only assigned once.
 If no value is assigned, tracks files with the same name as the class name.</p>
+<blockquote>
+<div><p>Note: To use embedded resources, follow the format below.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nf">YourSprite</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">   </span><span class="n">embedded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">   </span>
+<span class="w">   </span><span class="n">texture_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yourAssembly</span><span class="p">.</span><span class="n">GetManifestResourceNames</span><span class="p">().</span><span class="n">First</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="s">&quot;SpriteName.png&quot;</span><span class="p">));</span>
+
+<span class="w">   </span><span class="c1">// Set Properties...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">texture_path</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -519,7 +522,20 @@ If not assigned, it returns height of the texture.</p>
 <section id="texturepath">
 <h3>TexturePath<a class="headerlink" href="#texturepath" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#texture-path"><span class="xref myst">texture_path</span></a>.</p>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">TexturePath</span><span class="p">;</span>
+<blockquote>
+<div><p>Note: To use embedded resources, follow the format below.</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nf">YourSprite</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">   </span><span class="n">embedded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">   </span>
+<span class="w">   </span><span class="n">TexturePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yourAssembly</span><span class="p">.</span><span class="n">GetManifestResourceNames</span><span class="p">().</span><span class="n">First</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="s">&quot;SpriteName.png&quot;</span><span class="p">));</span>
+
+<span class="w">   </span><span class="c1">// Set Properties...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">TexturePath</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
 </pre></div>
 </div>
 </br>
@@ -692,7 +708,7 @@ If not assigned, it returns height of the texture.</p>
             <ul>
 <li><a class="reference internal" href="#">Sprite</a><ul>
 <li><a class="reference internal" href="#properties">Properties</a><ul>
-<li><a class="reference internal" href="#texture">texture</a></li>
+<li><a class="reference internal" href="#embedded">embedded</a></li>
 <li><a class="reference internal" href="#texture-path">texture_path</a></li>
 <li><a class="reference internal" href="#x">x</a></li>
 <li><a class="reference internal" href="#y">y</a></li>

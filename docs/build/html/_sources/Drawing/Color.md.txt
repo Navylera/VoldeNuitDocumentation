@@ -57,3 +57,36 @@ Gets and sets B value.
 ```C#
 public static byte B;
 ```
+
+</br></br>
+
+### Static Methods
+
+#### color_to_xna(uint color)
+
+Returns the current [ColorFormat](/Configuration.md#color-format) as an [XNA Color object](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html).
+
+- Returns: [Microsoft.Xna.Framework.Color](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html)
+
+|Parameter|Type|Desc|
+|---|---|---|
+|color|uint|Color to convert.|
+
+```C#
+public static Microsoft.Xna.Framework.Color color_to_xna(uint color) {};
+```
+
+</br></br>
+
+### Static Methods Alias
+
+Alias of [color_to_xna(uint color)](color-to-xna-uint-color).
+
+- Returns: [Microsoft.Xna.Framework.Color](https://docs.monogame.net/api/Microsoft.Xna.Framework.Color.html)
+
+|Parameter|Type|Desc|
+|---|---|---|
+|color|uint|Color to convert.|
+
+#### public static Microsoft.Xna.Framework.Color ColorToXna(uint color)
+

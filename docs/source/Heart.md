@@ -176,6 +176,39 @@ public static void InitSpriteBatch(SpriteBatch spriteBatch) {}
 
 </br>
 
+#### InitSplashBgColor(uint color)
+
+Initializes background color of the splash screen. The default value is 0xffde5bu(RGB).
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|color|uint|Color to set.|
+
+```C#
+public static void InitSplashBgColor(uint color) {}
+```
+
+</br>
+
+#### InitSplashTextColor(uint color)
+
+Initializes text color of the splash screen. The default value is 0.
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|color|uint|Color to set.|
+
+```C#
+public static void InitSplashTextColor(uint color) {}
+```
+
+
+</br>
+
 #### Beat()
 
 Updates state of the game.

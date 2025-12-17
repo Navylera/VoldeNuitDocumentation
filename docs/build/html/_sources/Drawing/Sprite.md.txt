@@ -16,14 +16,13 @@ The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path
 
 </br>
 
-#### texture
-Contains Texture to draw.
+#### embedded
+Contains whether resource is embedded or not. The default value is false.
 
->Note: It is not recommended that modifying the Texture of pre-defined Sprite.
-If necessary, get copy of the Sprite by using [sprite_copy(Sprite sprite)](sprite-copy-sprite-sprite).
+>Note: Embedded resources support only .png files.
 
 ```C#
-public Texture2D? texture_path { get; set; }
+public bool embedded = false;
 ```
 
 </br>
@@ -31,6 +30,19 @@ public Texture2D? texture_path { get; set; }
 #### texture_path
 Contains path of texture file. The default value is null. It can be only assigned once.
  If no value is assigned, tracks files with the same name as the class name.
+
+>Note: To use embedded resources, follow the format below.
+>```C#
+>
+>public YourSprite() {
+>
+>    embedded = true;
+>    
+>    texture_path = yourAssembly.GetManifestResourceNames().First(n => n.EndsWith("SpriteName.png"));
+>
+>    // Set Properties...
+>}
+>```
 
 ```C#
 public string? texture_path { get; init; } = null;
@@ -207,8 +219,21 @@ Returns new Sprite that modified alpha based on the grayscale Sprite.
 #### TexturePath
 Alias of [texture_path](texture-path).
 
+>Note: To use embedded resources, follow the format below.
+>```C#
+>
+>public YourSprite() {
+>
+>    embedded = true;
+>    
+>    TexturePath = yourAssembly.GetManifestResourceNames().First(n => n.EndsWith("SpriteName.png"));
+>
+>    // Set Properties...
+>}
+>```
+
 ```C#
-public string? TexturePath;
+public string? TexturePath { get; init; } = null;
 ```
 
 </br>

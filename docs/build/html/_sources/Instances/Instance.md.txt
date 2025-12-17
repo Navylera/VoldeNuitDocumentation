@@ -207,7 +207,7 @@ public float image_speed = 1f;
 </br>
 
 #### image_index
-Contains subimage index of Spritesheet. The default value is 0.\ 
+Contains subimage index of Spritesheet. The default value is 0.\
 It automatically increases by image_speed before [Begin_Step](begin-step).\
 [draw_self()](draw-self) refers to this value.
 
@@ -345,7 +345,7 @@ public virtual void End_Draw() {}
 </br>
 
 #### GUI_Draw()
-In this method, position(0, 0) is always left-top of the game window.\
+In this method, position (0, 0) is always left-top of the game window and are unaffected by the scaling of any Viewport displayed on the screen.\
 For more information, see [Heart.Draw()](/Heart.md#draw).
 
 ```C#

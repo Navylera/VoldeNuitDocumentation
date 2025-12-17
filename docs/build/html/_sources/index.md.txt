@@ -72,4 +72,4 @@ To start the Monogame project, please visit the
 
 </br></br>
 
-<center>Documentation of VoldeNuitFramework v.1.0.0.0</center>
+<center>Documentation of VoldeNuitFramework v2.3.0</center>

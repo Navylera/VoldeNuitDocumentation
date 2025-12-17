@@ -1,15 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
-        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Draw.html" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html">
+        <link rel="canonical" href="https://Navylera.github.io/VoldeNuitDocumentation/Drawing/Draw.html">
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"><!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
         <title>Draw - VoldeNuit Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -23,14 +23,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -145,14 +145,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -162,8 +158,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -171,8 +166,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -180,8 +174,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -223,8 +216,7 @@
   </a>
 </div>
 <div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -232,8 +224,7 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -655,6 +646,10 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <section id="draw-set-font-font-font">
 <h3>draw_set_font(Font font)<a class="headerlink" href="#draw-set-font-font-font" title="Link to this heading">¶</a></h3>
 <p>Sets default <a class="reference internal" href="Font.html"><span class="std std-doc">Font</span></a>.</p>
+<blockquote>
+<div><p>Note: Since resources are loaded asynchronously, this method must not be used before initialization is fully complete.</p>
+</div></blockquote>
+<p>This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -783,6 +778,9 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <section id="draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">
 <h3>draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)<a class="headerlink" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
 <p>Draws text with additional options.</p>
+<blockquote>
+<div><p>Note: The parameters sep and w are predicated on the assumption that xscale and yscale are both 1, respectively. if different values are passed to xscale and yscale, sep and w must be adjusted proportionally.</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -858,6 +856,33 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </table>
 </div>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">string_width</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="char-width-char-c">
+<h3>char_width(char c)<a class="headerlink" href="#char-width-char-c" title="Link to this heading">¶</a></h3>
+<p>Returns width of the character be drawn using the currently defined font.</p>
+<ul class="simple">
+<li><p>Returns: int (width of the character.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>char</p></td>
+<td><p>character to measure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">string_width</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1486,6 +1511,9 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <section id="setdrawingfont-font-font">
 <h3>SetDrawingFont(Font font)<a class="headerlink" href="#setdrawingfont-font-font" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#draw-set-font-font-font"><span class="xref myst">draw_set_font(Font font)</span></a>.</p>
+<blockquote>
+<div><p>Note: Since resources are loaded asynchronously, this method must not be used before initialization is fully complete.</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -1614,6 +1642,9 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <section id="drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">
 <h3>DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)<a class="headerlink" href="#drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f"><span class="xref myst">draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</span></a>.</p>
+<blockquote>
+<div><p>Note: The parameters lineBreakSpace and maxWidth are predicated on the assumption that xScale and yScale are both 1, respectively. if different values are passed to xScale and yScale, maxWidth and lineBreakSpace must be adjusted proportionally.</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -1689,6 +1720,33 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </table>
 </div>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetStringWidth</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="getcharwidth-char-c">
+<h3>GetCharWidth(char c)<a class="headerlink" href="#getcharwidth-char-c" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#char-width-char-c"><span class="xref myst">char_width(char c)</span></a>.</p>
+<ul class="simple">
+<li><p>Returns: int (width of the character.)</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>char</p></td>
+<td><p>character to measure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetCharWidth</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1969,6 +2027,7 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <li><a class="reference internal" href="#draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text(float x, float y, string text, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#string-width-string-text">string_width(string text)</a></li>
+<li><a class="reference internal" href="#char-width-char-c">char_width(char c)</a></li>
 <li><a class="reference internal" href="#draw-texture-texture2d-texture-float-x-float-y">draw_texture(Texture2D texture, float x, float y)</a></li>
 <li><a class="reference internal" href="#draw-texture-ext-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">draw_texture_ext(Texture2D texture, float x, float y, float xscale, float yscale, int vx, int vy, float angle, uint color, float alpha)</a></li>
 <li><a class="reference internal" href="#draw-texture-part-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">draw_texture_part(Texture2D texture, int left, int top, int width, int height, float x, float y)</a></li>
@@ -1995,6 +2054,7 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#getstringwidth-string-text">GetStringWidth(string text)</a></li>
+<li><a class="reference internal" href="#getcharwidth-char-c">GetCharWidth(char c)</a></li>
 <li><a class="reference internal" href="#drawtexture-texture2d-texture-float-x-float-y">DrawTexture(Texture2D texture, float x, float y)</a></li>
 <li><a class="reference internal" href="#drawtexture-texture2d-texture-float-x-float-y-float-xscale-float-yscale-int-vx-int-vy-float-angle-uint-color-float-alpha">DrawTexture(Texture2D texture, float x, float y, float xScale, float yScale, int vx, int vy, float angle, uint color, float alpha)</a></li>
 <li><a class="reference internal" href="#drawtexturepart-texture2d-texture-int-left-int-top-int-width-int-height-float-x-float-y">DrawTexturePart(Texture2D texture, int left, int top, int width, int height, float x, float y)</a></li>

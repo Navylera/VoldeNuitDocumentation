@@ -18,9 +18,33 @@ The default path is "[Configuration.CONTENT_PATH](/Configuration.md#content-path
 
 </br>
 
+#### embedded
+Contains whether resource is embedded or not. The default value is false.
+
+>Note: Embedded resources support only .wav and .ogg files.
+
+```C#
+public bool embedded = false;
+```
+
+</br>
+
 #### sound_path
 Contains path of sound file. The default value is null. It can be only assigned once.
  If no value is assigned, tracks files with the same name as the class name.
+
+>Note: To use embedded resources, follow the format below.
+>```C#
+>
+>public YourSound() {
+>
+>    embedded = true;
+>    
+>    sound_path = yourAssembly.GetManifestResourceNames().First(n => n.EndsWith("SoundName.ogg"));
+>
+>    // Set Properties...
+>}
+>```
 
 ```C#
 public string? sound_path { get; init; } = null;
@@ -274,8 +298,21 @@ public float Volume;
 #### SoundPath
 Alias of [sound_path](sound-path).
 
+>Note: To use embedded resources, follow the format below.
+>```C#
+>
+>public YourSound() {
+>
+>    embedded = true;
+>    
+>    SoundPath = yourAssembly.GetManifestResourceNames().First(n => n.EndsWith("SoundName.ogg"));
+>
+>    // Set Properties...
+>}
+>```
+
 ```C#
-public string? SoundPath;
+public string? SoundPath { get; init; } = null;
 ```
 
 </br></br>

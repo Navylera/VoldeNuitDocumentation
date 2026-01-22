@@ -98,7 +98,7 @@ public static void draw_line(float x1, float y1, float x2, float y2, int width =
 
 </br>
 
-#### draw_rectangle(float x, float y, int width, int height, bool outline = false)
+#### draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1)
 Draws rectangle.
 
 - Returns: N/A
@@ -110,9 +110,10 @@ Draws rectangle.
 |width|int|Width of rectangle.|
 |height|int|Height of rectangle.|
 |outline|bool|Whether the rectangle is drawn filled (false) or as a one pixel wide outline (true).|
+|width_line|int|Thickness of the rectangle borders (only when outline is true).|
 
 ```C#
-public static void draw_rectangle(float x, float y, int width, int height, bool outline = false) {}
+public static void draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1) {}
 ```
 
 </br>
@@ -135,7 +136,7 @@ public static void draw_sprite(Sprite sprite_index, float image_index, float x, 
 
 </br>
 
-#### draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)
+#### draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle = 0f, uint color = , float alpha)
 Draws [Sprite](./Sprite.md) with additional options.
 
 - Returns: N/A
@@ -299,6 +300,54 @@ Draws text with additional options.
 
 ```C#
 public static void draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f) {}
+```
+
+</br>
+
+#### draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f)
+Draws text in monospace.
+
+>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|x|float|x position to draw.|
+|y|float|y position to draw.|
+|text|string|Text to draw.|
+|cwidth|int|Width of character (single-byte).|
+|xscale|float|Xscale of texture. The default value is 1.|
+|yscale|float|Yscale of texture. The default value is 1.|
+|angle|float|Rotation of texture. The default value is 0.|
+
+```C#
+public static void draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f) {}
+```
+
+</br>
+
+#### draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)
+Draws text in monospace with additional options.
+
+>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|x|float|x position to draw.|
+|y|float|y position to draw.|
+|text|string|Text to draw.|
+|cwidth|int|Width of character (single-byte).
+|sep|float|Distance between lines of text.|
+|w|float|Maximum width of the text before a line break.|
+|xscale|float|Xscale of texture. The default value is 1.|
+|yscale|float|Yscale of texture. The default value is 1.|
+|angle|float|Rotation of texture. The default value is 0.|
+
+```C#
+public static void draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f) {}
 ```
 
 </br>
@@ -506,8 +555,8 @@ public static void DrawLine(float x1, float y1, float x2, float y2, int width = 
 
 </br>
 
-#### DrawRectangle(float x, float y, int width, int height, bool outLine = false)
-Alias of [draw_rectangle(float x, float y, int width, int height, bool outline = false)](draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false).
+#### DrawRectangle(float x, float y, int width, int height, bool outLine = false, lineWidth = 1)
+Alias of [draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1)](draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false-int-width-line-1).
 
 - Returns: N/A
 
@@ -520,7 +569,7 @@ Alias of [draw_rectangle(float x, float y, int width, int height, bool outline =
 |outLine|bool|Whether the rectangle is drawn filled (false) or as a one pixel wide outline (true).|
 
 ```C#
-public static void DrawRectangle(float x, float y, int width, int height, bool outLine = false) {}
+public static void DrawRectangle(float x, float y, int width, int height, bool outLine = false, int lineWidth = 1) {}
 ```
 
 </br>
@@ -543,8 +592,10 @@ public static void DrawSprite(Sprite spriteIndex, float imageIndex, float x, flo
 
 </br>
 
-#### DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha)
+#### DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle = 0f, uint color = 0xffffffu, float alpha = 1f)
 Alias of [draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)](draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha).
+
+>Note: Only parameters of the DrawSprite(...) method have default values; this does not apply to the draw_sprite_ext(...) method.
 
 - Returns: N/A
 
@@ -556,12 +607,12 @@ Alias of [draw_sprite_ext(Sprite sprite_index, float image_index, float x, float
 |y|float|y position of Sprite.|
 |xScale|float|Xscale of Sprite.|
 |yScale|float|Yscale of Sprite.|
-|angle|float|Rotation of Sprite.|
-|color|float|Color that blend to Sprite.|
-|alpha|float|Alpha of Sprite.|
+|angle|float|Rotation of Sprite. The default value is 0.|
+|color|float|Color that blend to Sprite. The default value is 0xffffffu.|
+|alpha|float|Alpha of Sprite. The default value is 1.|
 
 ```C#
-public static void DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha) {}
+public static void DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle = 0f, uint color = 0xffffffu, float alpha = 1f) {}
 ```
 
 </br>
@@ -590,10 +641,12 @@ public static void DrawSpritePart(Sprite spriteIndex, float imageIndex, int left
 
 </br>
 
-#### DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)
+#### DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color = 0xffffffu, float alpha = 1f)
 Alias of [draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)](draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha).
 
 >Note: This method ignores offset of Sprite ([Sprite.x](./Sprite.md#x) and [Sprite.y](./Sprite.md#y)).
+
+>Note: Only parameters of the DrawSprite(...) method have default values; this does not apply to the draw_sprite_ext(...) method.
 
 - Returns: N/A
 
@@ -609,11 +662,11 @@ Alias of [draw_sprite_part_ext(Sprite sprite_index, float image_index, int left,
 |y|float|y position to draw area.|
 |xScale|float|Xscale of Sprite.|
 |yScale|float|Yscale of Sprite.|
-|color|float|Color that blend to Sprite.|
-|alpha|float|Alpha of Sprite.|
+|color|float|Color that blend to Sprite. The default value is 0xffffffu.|
+|alpha|float|Alpha of Sprite. The default value is 1.|
 
 ```C#
-public static void DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha) {}
+public static void DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color = 0xffffffu, float alpha = 1f) {}
 ```
 
 </br>
@@ -709,6 +762,54 @@ public void DrawText(float x, float y, string text, int lineBreakSpace, int maxW
 
 </br>
 
+#### DrawTextMono(float x, float y, string text, int cWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)
+Alias of [draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f)](draw-text-mono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f).
+
+>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|x|float|x position to draw.|
+|y|float|y position to draw.|
+|text|string|Text to draw.|
+|cWidth|int|Width of character (single-byte).|
+|sep|float|Distance between lines of text.|
+|xScale|float|Xscale of texture. The default value is 1.|
+|yScale|float|Yscale of texture. The default value is 1.|
+|angle|float|Rotation of texture. The default value is 0.|
+
+```C#
+public static void DrawTextMono(float x, float y, string text, int cWidth, float xScale = 1f, float yScale = 1f, float angle = 0f) {}
+```
+
+</br>
+
+#### DrawTextMono(float x, float y, string text, int cWidth, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)
+Alias of [draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)](draw-text-mono-ext-float-x-float-y-string-text-int-cwidth-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f).
+
+>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).
+
+- Returns: N/A
+
+|Parameter|Type|Desc|
+|---|---|---|
+|x|float|x position to draw.|
+|y|float|y position to draw.|
+|text|string|Text to draw.|
+|cwidth|int|Width of character (single-byte).
+|sep|float|Distance between lines of text.|
+|w|float|Maximum width of the text before a line break.|
+|xscale|float|Xscale of texture. The default value is 1.|
+|yscale|float|Yscale of texture. The default value is 1.|
+|angle|float|Rotation of texture. The default value is 0.|
+
+```C#
+public static void DrawTextMono(float x, float y, string text, int cWidth, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f) {}
+```
+
+</br>
 
 #### GetStringWidth(string text)
 Alias of [string_width(string text)](string-width-string-text).

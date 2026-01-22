@@ -17,7 +17,7 @@ contains configuration about the overall game system.
 ANGLE_FORMAT contains that how to handle angle values. 
 
 - RADIAN handles angle value from -float.Pi to float.Pi;
- calculated as 0 being right, float.Pi/2 being down, (-)float.Pi being left and -float.Pi/2 being down.
+ calculated as 0 being right, float.Pi/2 being down, (-)float.Pi being left and -float.Pi/2 being up.
 - DEGREE handles angle value from 0 to 360;
  calculated as 0 being right, 90 being down, 180 being left and 270 being up.
 - LEGACY handles angle value from 0 to 360;

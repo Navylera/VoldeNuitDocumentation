@@ -370,8 +370,8 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </div>
 </br>
 </section>
-<section id="draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false">
-<h3>draw_rectangle(float x, float y, int width, int height, bool outline = false)<a class="headerlink" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false" title="Link to this heading">¶</a></h3>
+<section id="draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false-int-width-line-1">
+<h3>draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1)<a class="headerlink" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false-int-width-line-1" title="Link to this heading">¶</a></h3>
 <p>Draws rectangle.</p>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
@@ -405,10 +405,14 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <td><p>bool</p></td>
 <td><p>Whether the rectangle is drawn filled (false) or as a one pixel wide outline (true).</p></td>
 </tr>
+<tr class="row-odd"><td><p>width_line</p></td>
+<td><p>int</p></td>
+<td><p>Thickness of the rectangle borders (only when outline is true).</p></td>
+</tr>
 </tbody>
 </table>
 </div>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_rectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_rectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -452,8 +456,8 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </div>
 </br>
 </section>
-<section id="draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">
-<h3>draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)<a class="headerlink" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<section id="draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-float-alpha">
+<h3>draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle = 0f, uint color = , float alpha)<a class="headerlink" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
 <p>Draws <a class="reference internal" href="Sprite.html"><span class="std std-doc">Sprite</span></a> with additional options.</p>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
@@ -829,6 +833,122 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </table>
 </div>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_text_ext</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sep</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-text-mono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f)<a class="headerlink" href="#draw-text-mono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Draws text in monospace.</p>
+<blockquote>
+<div><p>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cwidth</p></td>
+<td><p>int</p></td>
+<td><p>Width of character (single-byte).</p></td>
+</tr>
+<tr class="row-even"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_text_mono</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cwidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="draw-text-mono-ext-float-x-float-y-string-text-int-cwidth-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)<a class="headerlink" href="#draw-text-mono-ext-float-x-float-y-string-text-int-cwidth-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Draws text in monospace with additional options.</p>
+<blockquote>
+<div><p>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cwidth</p></td>
+<td><p>int</p></td>
+<td><p>Width of character (single-byte).</p></td>
+</tr>
+<tr class="row-even"><td><p>sep</p></td>
+<td><p>float</p></td>
+<td><p>Distance between lines of text.</p></td>
+</tr>
+<tr class="row-odd"><td><p>w</p></td>
+<td><p>float</p></td>
+<td><p>Maximum width of the text before a line break.</p></td>
+</tr>
+<tr class="row-even"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">draw_text_mono_ext</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cwidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">sep</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1235,9 +1355,9 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </div>
 </br>
 </section>
-<section id="drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false">
-<h3>DrawRectangle(float x, float y, int width, int height, bool outLine = false)<a class="headerlink" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false" title="Link to this heading">¶</a></h3>
-<p>Alias of <a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false"><span class="xref myst">draw_rectangle(float x, float y, int width, int height, bool outline = false)</span></a>.</p>
+<section id="drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false-linewidth-1">
+<h3>DrawRectangle(float x, float y, int width, int height, bool outLine = false, lineWidth = 1)<a class="headerlink" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false-linewidth-1" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false-int-width-line-1"><span class="xref myst">draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1)</span></a>.</p>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -1273,7 +1393,7 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </tbody>
 </table>
 </div>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawRectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawRectangle</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">outLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lineWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1317,9 +1437,12 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </div>
 </br>
 </section>
-<section id="drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">
-<h3>DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha)<a class="headerlink" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<section id="drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-0xffffffu-float-alpha-1f">
+<h3>DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle = 0f, uint color = 0xffffffu, float alpha = 1f)<a class="headerlink" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-0xffffffu-float-alpha-1f" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha"><span class="xref myst">draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)</span></a>.</p>
+<blockquote>
+<div><p>Note: Only parameters of the DrawSprite(…) method have default values; this does not apply to the draw_sprite_ext(…) method.</p>
+</div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
 </ul>
@@ -1358,20 +1481,20 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </tr>
 <tr class="row-even"><td><p>angle</p></td>
 <td><p>float</p></td>
-<td><p>Rotation of Sprite.</p></td>
+<td><p>Rotation of Sprite. The default value is 0.</p></td>
 </tr>
 <tr class="row-odd"><td><p>color</p></td>
 <td><p>float</p></td>
-<td><p>Color that blend to Sprite.</p></td>
+<td><p>Color that blend to Sprite. The default value is 0xffffffu.</p></td>
 </tr>
 <tr class="row-even"><td><p>alpha</p></td>
 <td><p>float</p></td>
-<td><p>Alpha of Sprite.</p></td>
+<td><p>Alpha of Sprite. The default value is 1.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSprite</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSprite</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xffffffu</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1434,11 +1557,14 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </div>
 </br>
 </section>
-<section id="drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">
-<h3>DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)<a class="headerlink" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha" title="Link to this heading">¶</a></h3>
+<section id="drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-0xffffffu-float-alpha-1f">
+<h3>DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color = 0xffffffu, float alpha = 1f)<a class="headerlink" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-0xffffffu-float-alpha-1f" title="Link to this heading">¶</a></h3>
 <p>Alias of <a class="reference internal" href="#draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha"><span class="xref myst">draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</span></a>.</p>
 <blockquote>
 <div><p>Note: This method ignores offset of Sprite (<a class="reference internal" href="Sprite.html#x"><span class="std std-ref">Sprite.x</span></a> and <a class="reference internal" href="Sprite.html#y"><span class="std std-ref">Sprite.y</span></a>).</p>
+</div></blockquote>
+<blockquote>
+<div><p>Note: Only parameters of the DrawSprite(…) method have default values; this does not apply to the draw_sprite_ext(…) method.</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>Returns: N/A</p></li>
@@ -1494,16 +1620,16 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </tr>
 <tr class="row-even"><td><p>color</p></td>
 <td><p>float</p></td>
-<td><p>Color that blend to Sprite.</p></td>
+<td><p>Color that blend to Sprite. The default value is 0xffffffu.</p></td>
 </tr>
 <tr class="row-odd"><td><p>alpha</p></td>
 <td><p>float</p></td>
-<td><p>Alpha of Sprite.</p></td>
+<td><p>Alpha of Sprite. The default value is 1.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSpritePart</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawSpritePart</span><span class="p">(</span><span class="n">Sprite</span><span class="w"> </span><span class="n">spriteIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">imageIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xffffffu</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -1693,6 +1819,126 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 </table>
 </div>
 <div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawText</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lineBreakSpace</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxWidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtextmono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>DrawTextMono(float x, float y, string text, int cWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)<a class="headerlink" href="#drawtextmono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-text-mono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f"><span class="xref myst">draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f)</span></a>.</p>
+<blockquote>
+<div><p>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cWidth</p></td>
+<td><p>int</p></td>
+<td><p>Width of character (single-byte).</p></td>
+</tr>
+<tr class="row-even"><td><p>sep</p></td>
+<td><p>float</p></td>
+<td><p>Distance between lines of text.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xScale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>yScale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTextMono</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cWidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</br>
+</section>
+<section id="drawtextmono-float-x-float-y-string-text-int-cwidth-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">
+<h3>DrawTextMono(float x, float y, string text, int cWidth, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)<a class="headerlink" href="#drawtextmono-float-x-float-y-string-text-int-cwidth-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f" title="Link to this heading">¶</a></h3>
+<p>Alias of <a class="reference internal" href="#draw-text-mono-ext-float-x-float-y-string-text-int-cwidth-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f"><span class="xref myst">draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</span></a>.</p>
+<blockquote>
+<div><p>Note: The parameter cwidth defines the width for a single-byte character, while double-byte characters take up twice the value (Encoding.Unicode).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Returns: N/A</p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Desc</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>float</p></td>
+<td><p>x position to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>y</p></td>
+<td><p>float</p></td>
+<td><p>y position to draw.</p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>Text to draw.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cwidth</p></td>
+<td><p>int</p></td>
+<td><p>Width of character (single-byte).</p></td>
+</tr>
+<tr class="row-even"><td><p>sep</p></td>
+<td><p>float</p></td>
+<td><p>Distance between lines of text.</p></td>
+</tr>
+<tr class="row-odd"><td><p>w</p></td>
+<td><p>float</p></td>
+<td><p>Maximum width of the text before a line break.</p></td>
+</tr>
+<tr class="row-even"><td><p>xscale</p></td>
+<td><p>float</p></td>
+<td><p>Xscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>yscale</p></td>
+<td><p>float</p></td>
+<td><p>Yscale of texture. The default value is 1.</p></td>
+</tr>
+<tr class="row-even"><td><p>angle</p></td>
+<td><p>float</p></td>
+<td><p>Rotation of texture. The default value is 0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawTextMono</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cWidth</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lineBreakSpace</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxWidth</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">yScale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0f</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 </br>
@@ -2016,9 +2262,9 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <li><a class="reference internal" href="#draw-set-color-uint-rgb">draw_set_color(uint rgb)</a></li>
 <li><a class="reference internal" href="#draw-set-alpha-float-a">draw_set_alpha(float a)</a></li>
 <li><a class="reference internal" href="#draw-line-float-x1-float-y1-float-x2-float-y2-int-width-1">draw_line(float x1, float y1, float x2, float y2, int width = 1)</a></li>
-<li><a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false">draw_rectangle(float x, float y, int width, int height, bool outline = false)</a></li>
+<li><a class="reference internal" href="#draw-rectangle-float-x-float-y-int-width-int-height-bool-outline-false-int-width-line-1">draw_rectangle(float x, float y, int width, int height, bool outline = false, int width_line = 1)</a></li>
 <li><a class="reference internal" href="#draw-sprite-sprite-sprite-index-float-image-index-float-x-float-y">draw_sprite(Sprite sprite_index, float image_index, float x, float y)</a></li>
-<li><a class="reference internal" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#draw-sprite-ext-sprite-sprite-index-float-image-index-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-float-alpha">draw_sprite_ext(Sprite sprite_index, float image_index, float x, float y, float xscale, float yscale, float angle = 0f, uint color = , float alpha)</a></li>
 <li><a class="reference internal" href="#draw-sprite-part-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y">draw_sprite_part(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y)</a></li>
 <li><a class="reference internal" href="#draw-sprite-part-ext-sprite-sprite-index-float-image-index-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">draw_sprite_part_ext(Sprite sprite_index, float image_index, int left, int top, int width, int height, float x, float y, float xscale, float yscale, uint color, float alpha)</a></li>
 <li><a class="reference internal" href="#draw-set-font-font-font">draw_set_font(Font font)</a></li>
@@ -2026,6 +2272,8 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <li><a class="reference internal" href="#draw-set-valign-int-valign">draw_set_valign(int valign)</a></li>
 <li><a class="reference internal" href="#draw-text-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text(float x, float y, string text, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#draw-text-ext-float-x-float-y-string-text-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text_ext(float x, float y, string text, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#draw-text-mono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text_mono(float x, float y, string text, int cwidth, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#draw-text-mono-ext-float-x-float-y-string-text-int-cwidth-float-sep-float-w-float-xscale-1f-float-yscale-1f-float-angle-0f">draw_text_mono_ext(float x, float y, string text, int cwidth, float sep, float w, float xscale = 1f, float yscale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#string-width-string-text">string_width(string text)</a></li>
 <li><a class="reference internal" href="#char-width-char-c">char_width(char c)</a></li>
 <li><a class="reference internal" href="#draw-texture-texture2d-texture-float-x-float-y">draw_texture(Texture2D texture, float x, float y)</a></li>
@@ -2043,16 +2291,18 @@ For more information, see <a class="reference internal" href="../Heart.html#draw
 <li><a class="reference internal" href="#setdrawingcolor-uint-rgb">SetDrawingColor(uint rgb)</a></li>
 <li><a class="reference internal" href="#setdrawingalpha-float-a">SetDrawingAlpha(float a)</a></li>
 <li><a class="reference internal" href="#drawline-float-x1-float-y1-float-x2-float-y2-int-width-1">DrawLine(float x1, float y1, float x2, float y2, int width = 1)</a></li>
-<li><a class="reference internal" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false">DrawRectangle(float x, float y, int width, int height, bool outLine = false)</a></li>
+<li><a class="reference internal" href="#drawrectangle-float-x-float-y-int-width-int-height-bool-outline-false-linewidth-1">DrawRectangle(float x, float y, int width, int height, bool outLine = false, lineWidth = 1)</a></li>
 <li><a class="reference internal" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y">DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y)</a></li>
-<li><a class="reference internal" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-uint-color-float-alpha">DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#drawsprite-sprite-spriteindex-float-imageindex-float-x-float-y-float-xscale-float-yscale-float-angle-0f-uint-color-0xffffffu-float-alpha-1f">DrawSprite(Sprite spriteIndex, float imageIndex, float x, float y, float xScale, float yScale, float angle = 0f, uint color = 0xffffffu, float alpha = 1f)</a></li>
 <li><a class="reference internal" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y">DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y)</a></li>
-<li><a class="reference internal" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-float-alpha">DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color, float alpha)</a></li>
+<li><a class="reference internal" href="#drawspritepart-sprite-spriteindex-float-imageindex-int-left-int-top-int-width-int-height-float-x-float-y-float-xscale-float-yscale-uint-color-0xffffffu-float-alpha-1f">DrawSpritePart(Sprite spriteIndex, float imageIndex, int left, int top, int width, int height, float x, float y, float xScale, float yScale, uint color = 0xffffffu, float alpha = 1f)</a></li>
 <li><a class="reference internal" href="#setdrawingfont-font-font">SetDrawingFont(Font font)</a></li>
 <li><a class="reference internal" href="#sethorizontalalign-int-horizontalalign">SetHorizontalAlign(int horizontalAlign)</a></li>
 <li><a class="reference internal" href="#setverticalalign-int-verticalalign">SetVerticalAlign(int verticalAlign)</a></li>
 <li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#drawtext-float-x-float-y-string-text-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawText(float x, float y, string text, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#drawtextmono-float-x-float-y-string-text-int-cwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawTextMono(float x, float y, string text, int cWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
+<li><a class="reference internal" href="#drawtextmono-float-x-float-y-string-text-int-cwidth-int-linebreakspace-int-maxwidth-float-xscale-1f-float-yscale-1f-float-angle-0f">DrawTextMono(float x, float y, string text, int cWidth, int lineBreakSpace, int maxWidth, float xScale = 1f, float yScale = 1f, float angle = 0f)</a></li>
 <li><a class="reference internal" href="#getstringwidth-string-text">GetStringWidth(string text)</a></li>
 <li><a class="reference internal" href="#getcharwidth-char-c">GetCharWidth(char c)</a></li>
 <li><a class="reference internal" href="#drawtexture-texture2d-texture-float-x-float-y">DrawTexture(Texture2D texture, float x, float y)</a></li>

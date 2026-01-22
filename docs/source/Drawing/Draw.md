@@ -775,7 +775,6 @@ Alias of [draw_text_mono(float x, float y, string text, int cwidth, float xscale
 |y|float|y position to draw.|
 |text|string|Text to draw.|
 |cWidth|int|Width of character (single-byte).|
-|sep|float|Distance between lines of text.|
 |xScale|float|Xscale of texture. The default value is 1.|
 |yScale|float|Yscale of texture. The default value is 1.|
 |angle|float|Rotation of texture. The default value is 0.|
@@ -798,11 +797,11 @@ Alias of [draw_text_mono_ext(float x, float y, string text, int cwidth, float se
 |x|float|x position to draw.|
 |y|float|y position to draw.|
 |text|string|Text to draw.|
-|cwidth|int|Width of character (single-byte).
-|sep|float|Distance between lines of text.|
-|w|float|Maximum width of the text before a line break.|
-|xscale|float|Xscale of texture. The default value is 1.|
-|yscale|float|Yscale of texture. The default value is 1.|
+|cWidth|int|Width of character (single-byte).
+|lineBreakSpace|float|Distance between lines of text.|
+|maxWidth|float|Maximum width of the text before a line break.|
+|xScale|float|Xscale of texture. The default value is 1.|
+|yScale|float|Yscale of texture. The default value is 1.|
 |angle|float|Rotation of texture. The default value is 0.|
 
 ```C#

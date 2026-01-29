@@ -50,6 +50,8 @@ Contains path of sound file. The default value is null. It can be only assigned 
 public string? sound_path { get; init; } = null;
 ```
 
+</br>
+
 #### volume
 Contains volume of original audio. The default value is 1.\
 Any change in this value affects all [SoundInstance](./SoundInstance.md)s that reference it.

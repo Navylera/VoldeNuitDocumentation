@@ -169,7 +169,7 @@ is ignored in all collision decisions.\
 [draw_self()](draw-self) refers to this value.
 
 >Note: When assign value to sprit_index,
- must assign instance reference returned by the [instantiate(Type object_name)](instantiate-type-object-name) method.
+ must assign instance reference returned by the [Instantiate(Type object_name)](instantiate-type-object-name) method.
 
 ```C#
 public Sprite? sprite_index = null;
@@ -480,7 +480,7 @@ Returns following type by converting it into reference of Instance.
 |object_name|Type|Type to convert to Instance.|
 
 ```C#
-public static dynamic? instantiate(Type object_name) {}
+public static dynamic? Instantiate(Type object_name) {}
 ```
 
 </br>
